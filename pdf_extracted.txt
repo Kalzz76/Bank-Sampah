@@ -1,0 +1,390 @@
+=== PAGE 1 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+PROYEK AKHIR MANDIRI 
+Mata Pelajaran : PBTM (PEMROGRAMAN MULTIMEDIA) 
+Kelas XII Rekayasa Perangkat Lunak (RPL) - SMKN 13 Bandung 
+ 
+Pembuatan Aplikasi Berbasis Multimedia Menggunakan Visual Studio dan SQL Server 
+ 
+NARASI PROYEK 
+Perkembangan teknologi informasi telah mengubah cara masyarakat dalam mengelola data dan menyampaikan 
+informasi. Saat ini berbagai organisasi, sekolah, UMKM, komunitas, dan lembaga pelayanan membutuhkan 
+aplikasi yang tidak hanya mampu mengelola data tetapi juga mampu menyajikan informasi secara menarik 
+melalui unsur multimedia seperti gambar, audio, video, animasi, dan grafik. 
+Sebagai calon Software Developer, Anda diminta untuk merancang dan membangun sebuah Aplikasi Berbasis 
+Multimedia yang dapat membantu menyelesaikan permasalahan nyata di lingkungan sekitar. 
+Aplikasi yang dibuat harus mampu: 
+• 
+Mengelola data menggunakan database.  
+• 
+Menampilkan informasi dalam bentuk multimedia.  
+• 
+Memiliki antarmuka yang mudah digunakan.  
+• 
+Menerapkan prinsip CRUD (Create, Read, Update, Delete).  
+• 
+Menyimpan dan menampilkan data secara dinamis.  
+• 
+Memiliki nilai manfaat bagi pengguna.  
+Proyek ini dikerjakan secara mandiri sebagai bentuk unjuk kompetensi akhir mata pelajaran Pemrograman 
+Multimedia. 
+ 
+TANTANGAN PROYEK 
+Buatlah sebuah aplikasi desktop berbasis Windows Forms menggunakan C# pada Visual Studio yang 
+memanfaatkan minimal 3 unsur multimedia dan database SQL Server. 
+Aplikasi harus menyelesaikan masalah nyata yang ada di lingkungan sekolah, masyarakat, UMKM, komunitas, 
+atau organisasi. 
+ 
+PILIHAN TEMA PROYEK 
+Siswa boleh memilih salah satu tema berikut atau mengusulkan tema lain yang disetujui guru. 
+Bidang Pendidikan 
+
+
+=== PAGE 2 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+• 
+Sistem Perpustakaan Digital  
+• 
+Sistem Peminjaman Laboratorium  
+• 
+Sistem Absensi Siswa  
+• 
+Sistem Pengelolaan Ekstrakurikuler  
+• 
+Sistem Administrasi OSIS  
+ 
+Bidang Masyarakat 
+• 
+Sistem Pengelolaan RT/RW  
+• 
+Sistem Posyandu  
+• 
+Sistem Bank Sampah  
+• 
+Sistem Karang Taruna  
+• 
+Sistem Pendataan Penduduk 
+• 
+Sistem Pengaduan Masyarakat 
+ 
+ 
+Bidang UMKM 
+• 
+Sistem Penjualan Toko  
+• 
+Sistem Kasir  
+• 
+Sistem Pemesanan Produk  
+• 
+Sistem Inventaris Barang  
+• 
+Sistem Manajemen Pelanggan  
+ 
+Bidang Kesehatan 
+• 
+Sistem Pendaftaran Klinik  
+• 
+Sistem Rekam Pemeriksaan Sederhana  
+• 
+Sistem Jadwal Konsultasi  
+KRITERIA WAJIB APLIKASI 
+1. Form Login 
+Harus tersedia: 
+Username 
+Password 
+Login 
+Logout 
+ 
+2. Dashboard 
+
+
+=== PAGE 3 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+Menampilkan: 
+Nama Aplikasi 
+Jumlah Data 
+Menu Navigasi 
+Informasi Multimedia 
+ 
+3. Database 
+Minimal memiliki: 
+3 tabel 
+Contoh: 
+tb_user 
+tb_produk 
+tb_transaksi 
+ 
+4. CRUD 
+Minimal terdapat: 
+Tambah Data 
+Ubah Data 
+Hapus Data 
+Cari Data 
+ 
+5. Multimedia 
+Minimal menggunakan: 
+Gambar 
+Contoh: 
+Logo 
+Foto Produk 
+Foto Warga 
+Banner 
+ 
+Audio 
+Contoh: 
+Suara Login 
+Suara Berhasil Simpan 
+Suara Notifikasi 
+ 
+
+
+=== PAGE 4 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+ 
+ 
+Video 
+Contoh: 
+Profil Aplikasi 
+Tutorial Penggunaan 
+Promosi Produk 
+ 
+Grafik 
+Contoh: 
+Grafik Penjualan 
+Grafik Kehadiran 
+Grafik Pembayaran 
+Minimal 3 komponen multimedia digunakan. 
+ 
+HASIL YANG HARUS DIKUMPULKAN 
+Folder Proyek 
+NamaSiswa_XIIRPL 
+Berisi: 
+Source Code 
+Database 
+Gambar 
+Audio 
+Video 
+Laporan 
+ 
+ 
+TUTORIAL PENGERJAAN PROYEK 
+Berisikan urutan tahapan pembuatan proyek,disusun secara terstruktur sesuai pengerjaan yang harus 
+dilakukan siswa. 
+ 
+
+
+=== PAGE 5 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+ 
+ 
+ 
+TAHAP 1 : MENENTUKAN IDE PROYEK 
+Jawab pertanyaan berikut: 
+Masalah apa yang ingin diselesaikan? 
+Contoh: 
+Pendataan warga masih menggunakan buku. 
+ 
+Siapa pengguna aplikasi? 
+Contoh: 
+Ketua RT 
+ 
+Data apa yang akan dikelola? 
+Contoh: 
+Data Warga 
+Data Iuran 
+Data Pengumuman 
+ 
+TAHAP 2: MEMBUAT ANALISIS KEBUTUHAN 
+Buat tabel: 
+Kebutuhan 
+Keterangan 
+Input 
+Data yang dimasukkan 
+Proses 
+Pengolahan data 
+Output 
+Informasi yang dihasilkan 
+ 
+TAHAP 3 : MERANCANG DATABASE 
+Buat: 
+
+
+=== PAGE 6 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+ERD Sederhana 
+Contoh: 
+User 
+  | 
+Produk 
+  | 
+Transaksi 
+ 
+Struktur Tabel 
+Contoh: 
+CREATE TABLE tb_user 
+( 
+id_user INT PRIMARY KEY, 
+username VARCHAR(50) 
+) 
+ 
+TAHAP 4 : MEMBUAT DESAIN ANTARMUKA 
+Buat sketsa: 
+Login 
+Dashboard 
+Data Master 
+Laporan 
+Gunakan: 
+Figma 
+Canva 
+PowerPoint 
+Kertas 
+ 
+TAHAP 5 : MEMBUAT DATABASE SQL SERVER 
+Buka: 
+SSMS 
+↓ 
+Buat Database 
+↓ 
+
+
+=== PAGE 7 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+Buat Tabel 
+↓ 
+Input Data Awal 
+ 
+ 
+ 
+ 
+ 
+ 
+TAHAP 6: MEMBUAT PROJECT VISUAL STUDIO 
+Pilih: Windows Forms App 
+Bahasa: C# 
+ 
+TAHAP 7 : MEMBUAT KONEKSI DATABASE 
+Buat: 
+SqlConnection 
+ 
+untuk menghubungkan aplikasi dengan SQL Server. 
+ 
+TAHAP 8: MEMBUAT FORM LOGIN 
+Tambahkan: 
+Label 
+Textbox 
+Button 
+PictureBox 
+ 
+TAHAP 9: MEMBUAT DASHBOARD 
+Tambahkan: 
+Menu 
+Gambar 
+Statistik 
+Video 
+TAHAP 10 : MEMBUAT CRUD 
+
+
+=== PAGE 8 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+Buat: 
+Tambah 
+Edit 
+Hapus 
+Cari 
+ 
+menggunakan:   DataGridView 
+ 
+ 
+ 
+TAHAP 11 : MENAMBAHKAN MULTIMEDIA 
+Minimal: 
+Gambar 
+PictureBox 
+Audio 
+SoundPlayer 
+Video 
+Windows Media Player 
+ 
+TAHAP 12 : PENGUJIAN 
+Lakukan pengujian: 
+Pengujian 
+Hasil 
+Login 
+Berhasil 
+Simpan Data 
+Berhasil 
+Edit Data 
+Berhasil 
+Hapus Data 
+Berhasil 
+Multimedia 
+Berhasil 
+ 
+ 
+VALIDITAS APLIKASI 
+Agar aplikasi memperoleh nilai maksimal, aplikasi harus memenuhi: 
+Aspek 
+Kriteria 
+Functionality 
+Semua fitur berjalan 
+Reliability 
+Tidak error 
+Usability 
+Mudah digunakan 
+
+
+=== PAGE 9 ===
+Instrumen Soal & Tahapan Proyek Akhir- PBTM XII RPL @2026 
+Guru Pengampu : Maspuri Andewi, S.Kom 
+Aspek 
+Kriteria 
+Efficiency 
+Respon cepat 
+Database 
+Terintegrasi 
+Multimedia 
+Berfungsi baik 
+Interface 
+Rapi dan menarik 
+ 
+RUBRIK PENILAIAN PROYEK 
+Komponen 
+Bobot 
+Analisis Sistem 
+10% 
+Database 
+15% 
+Desain Interface 
+10% 
+CRUD 
+20% 
+Multimedia 
+20% 
+Pengujian 
+10% 
+Presentasi 
+15% 
+Total 
+100% 
+ 
+TARGET KOMPETENSI YANG DINILAI 
+Pada akhir proyek siswa diharapkan mampu: 
+✅ Menganalisis kebutuhan pengguna 
+✅ Merancang database 
+✅ Membuat aplikasi desktop 
+✅ Menghubungkan SQL Server dengan Visual Studio 
+✅ Mengimplementasikan multimedia 
+✅ Melakukan pengujian aplikasi 
+✅ Menjelaskan kode program yang dibuat 
+✅ Mempresentasikan hasil proyek secara profesional 
+ 
+
+

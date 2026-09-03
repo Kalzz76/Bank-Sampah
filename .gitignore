@@ -1,0 +1,9 @@
+# Visual Studio / Build Outputs
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+build.log
