@@ -17,6 +17,11 @@ namespace BankSampah
 
         private void FormVideoPlayer_Load(object sender, EventArgs e)
         {
+            UIHelper.MakeRounded(this, 16);
+            UIHelper.MakeRounded(btnClose, 8);
+            UIHelper.MakeRounded(btnChooseVideo, 8);
+            UIHelper.MakeRounded(btnDeleteVideo, 8);
+
             EnsureVideoFolder();
             LoadDefaultVideo();
         }

@@ -21,428 +21,501 @@ namespace BankSampah
 
         private void InitializeComponent()
         {
-            this.panelMainContainer = new System.Windows.Forms.TableLayoutPanel();
-            this.panelFormCard = new System.Windows.Forms.Panel();
-            this.lblFormHeader = new System.Windows.Forms.Label();
-            this.lblJenis = new System.Windows.Forms.Label();
-            this.cmbJenis = new System.Windows.Forms.ComboBox();
-            this.lblNasabah = new System.Windows.Forms.Label();
-            this.cmbNasabah = new System.Windows.Forms.ComboBox();
-            this.lblSaldoInfo = new System.Windows.Forms.Label();
-            this.lblSampah = new System.Windows.Forms.Label();
-            this.cmbSampah = new System.Windows.Forms.ComboBox();
-            this.lblHargaInfo = new System.Windows.Forms.Label();
-            this.lblBerat = new System.Windows.Forms.Label();
-            this.txtBerat = new System.Windows.Forms.TextBox();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.lblCatatan = new System.Windows.Forms.Label();
-            this.txtCatatan = new System.Windows.Forms.TextBox();
-            this.panelButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSimpan = new System.Windows.Forms.Button();
-            this.btnBatal = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelGridCard = new System.Windows.Forms.Panel();
             this.dgvTransaksi = new System.Windows.Forms.DataGridView();
-            this.panelSearchBox = new System.Windows.Forms.Panel();
-            this.lblRecordBadge = new System.Windows.Forms.Label();
-            this.lblCariIcon = new System.Windows.Forms.Label();
-            this.txtCari = new System.Windows.Forms.TextBox();
-            this.panelMainContainer.SuspendLayout();
-            this.panelFormCard.SuspendLayout();
-            this.panelButtons.SuspendLayout();
+            this.panelRiwayatHeader = new System.Windows.Forms.Panel();
+            this.lblRiwayatTitle = new System.Windows.Forms.Label();
+            this.panelFormCard = new System.Windows.Forms.Panel();
+            this.panelAudioBox = new System.Windows.Forms.Panel();
+            this.lblAudioInfo = new System.Windows.Forms.Label();
+            this.btnPlaySaveAudio = new System.Windows.Forms.Button();
+            this.panelCalcBox = new System.Windows.Forms.Panel();
+            this.btnSimpanTrx = new System.Windows.Forms.Button();
+            this.btnCetakStruk = new System.Windows.Forms.Button();
+            this.lblNilaiSetoranVal = new System.Windows.Forms.Label();
+            this.lblNilaiSetoranTitle = new System.Windows.Forms.Label();
+            this.tableLayoutPanelFields = new System.Windows.Forms.TableLayoutPanel();
+            this.panelField4 = new System.Windows.Forms.Panel();
+            this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
+            this.lblTanggalTitle = new System.Windows.Forms.Label();
+            this.panelField3 = new System.Windows.Forms.Panel();
+            this.txtBerat = new System.Windows.Forms.TextBox();
+            this.lblBeratTitle = new System.Windows.Forms.Label();
+            this.panelField2 = new System.Windows.Forms.Panel();
+            this.cmbSampah = new System.Windows.Forms.ComboBox();
+            this.lblSampahTitle = new System.Windows.Forms.Label();
+            this.panelField1 = new System.Windows.Forms.Panel();
+            this.cmbNasabah = new System.Windows.Forms.ComboBox();
+            this.lblNasabahTitle = new System.Windows.Forms.Label();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panelMain.SuspendLayout();
             this.panelGridCard.SuspendLayout();
-            this.panelSearchBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).BeginInit();
+            this.panelRiwayatHeader.SuspendLayout();
+            this.panelFormCard.SuspendLayout();
+            this.panelAudioBox.SuspendLayout();
+            this.panelCalcBox.SuspendLayout();
+            this.tableLayoutPanelFields.SuspendLayout();
+            this.panelField4.SuspendLayout();
+            this.panelField3.SuspendLayout();
+            this.panelField2.SuspendLayout();
+            this.panelField1.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMainContainer
+            // panelMain
             // 
-            this.panelMainContainer.ColumnCount = 1;
-            this.panelMainContainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            this.panelMainContainer.Controls.Add(this.panelFormCard, 0, 0);
-            this.panelMainContainer.Controls.Add(this.panelGridCard, 0, 1);
-            this.panelMainContainer.Dock = DockStyle.Fill;
-            this.panelMainContainer.Location = new Point(0, 0);
-            this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Padding = new Padding(20);
-            this.panelMainContainer.RowCount = 2;
-            this.panelMainContainer.RowStyles.Add(new RowStyle(SizeType.Absolute, 210F));
-            this.panelMainContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            this.panelMainContainer.Size = new Size(960, 655);
-            this.panelMainContainer.TabIndex = 0;
+            this.panelMain.AutoScroll = true;
+            this.panelMain.Controls.Add(this.panelGridCard);
+            this.panelMain.Controls.Add(this.panelFormCard);
+            this.panelMain.Controls.Add(this.panelHeader);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Padding = new System.Windows.Forms.Padding(20);
+            this.panelMain.Size = new System.Drawing.Size(900, 680);
+            this.panelMain.TabIndex = 0;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.lblDesc);
+            this.panelHeader.Controls.Add(this.lblTitle);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(20, 20);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(860, 50);
+            this.panelHeader.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(217, 25);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Transaksi Setor Sampah";
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblDesc.Location = new System.Drawing.Point(1, 28);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(434, 17);
+            this.lblDesc.TabIndex = 2;
+            this.lblDesc.Text = "Mencatat setoran sampah nasabah dan menghitung nilai tabungan otomatis.";
             // 
             // panelFormCard
             // 
-            this.panelFormCard.BackColor = Color.White;
-            this.panelFormCard.Controls.Add(this.lblFormHeader);
-            this.panelFormCard.Controls.Add(this.lblJenis);
-            this.panelFormCard.Controls.Add(this.cmbJenis);
-            this.panelFormCard.Controls.Add(this.lblNasabah);
-            this.panelFormCard.Controls.Add(this.cmbNasabah);
-            this.panelFormCard.Controls.Add(this.lblSaldoInfo);
-            this.panelFormCard.Controls.Add(this.lblSampah);
-            this.panelFormCard.Controls.Add(this.cmbSampah);
-            this.panelFormCard.Controls.Add(this.lblHargaInfo);
-            this.panelFormCard.Controls.Add(this.lblBerat);
-            this.panelFormCard.Controls.Add(this.txtBerat);
-            this.panelFormCard.Controls.Add(this.lblTotal);
-            this.panelFormCard.Controls.Add(this.txtTotal);
-            this.panelFormCard.Controls.Add(this.lblCatatan);
-            this.panelFormCard.Controls.Add(this.txtCatatan);
-            this.panelFormCard.Controls.Add(this.panelButtons);
-            this.panelFormCard.Dock = DockStyle.Fill;
-            this.panelFormCard.Location = new Point(20, 20);
-            this.panelFormCard.Margin = new Padding(0, 0, 0, 15);
+            this.panelFormCard.BackColor = System.Drawing.Color.White;
+            this.panelFormCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFormCard.Controls.Add(this.panelAudioBox);
+            this.panelFormCard.Controls.Add(this.panelCalcBox);
+            this.panelFormCard.Controls.Add(this.tableLayoutPanelFields);
+            this.panelFormCard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFormCard.Location = new System.Drawing.Point(20, 70);
             this.panelFormCard.Name = "panelFormCard";
-            this.panelFormCard.Padding = new Padding(15);
-            this.panelFormCard.Size = new Size(920, 195);
-            this.panelFormCard.TabIndex = 0;
+            this.panelFormCard.Padding = new System.Windows.Forms.Padding(16);
+            this.panelFormCard.Size = new System.Drawing.Size(860, 260);
+            this.panelFormCard.TabIndex = 1;
             // 
-            // lblFormHeader
+            // tableLayoutPanelFields
             // 
-            this.lblFormHeader.AutoSize = true;
-            this.lblFormHeader.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.lblFormHeader.ForeColor = Color.FromArgb(6, 78, 59);
-            this.lblFormHeader.Location = new Point(20, 10);
-            this.lblFormHeader.Name = "lblFormHeader";
-            this.lblFormHeader.Size = new Size(181, 20);
-            this.lblFormHeader.TabIndex = 0;
-            this.lblFormHeader.Text = "📝 Input Transaksi Baru";
+            this.tableLayoutPanelFields.ColumnCount = 2;
+            this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelFields.Controls.Add(this.panelField4, 1, 1);
+            this.tableLayoutPanelFields.Controls.Add(this.panelField3, 0, 1);
+            this.tableLayoutPanelFields.Controls.Add(this.panelField2, 1, 0);
+            this.tableLayoutPanelFields.Controls.Add(this.panelField1, 0, 0);
+            this.tableLayoutPanelFields.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanelFields.Location = new System.Drawing.Point(16, 16);
+            this.tableLayoutPanelFields.Name = "tableLayoutPanelFields";
+            this.tableLayoutPanelFields.RowCount = 2;
+            this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelFields.Size = new System.Drawing.Size(826, 116);
+            this.tableLayoutPanelFields.TabIndex = 0;
             // 
-            // lblJenis
+            // panelField1
             // 
-            this.lblJenis.AutoSize = true;
-            this.lblJenis.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblJenis.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblJenis.Location = new Point(20, 38);
-            this.lblJenis.Name = "lblJenis";
-            this.lblJenis.Size = new Size(107, 15);
-            this.lblJenis.TabIndex = 1;
-            this.lblJenis.Text = "🔄 Jenis Transaksi";
+            this.panelField1.Controls.Add(this.cmbNasabah);
+            this.panelField1.Controls.Add(this.lblNasabahTitle);
+            this.panelField1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelField1.Location = new System.Drawing.Point(0, 0);
+            this.panelField1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 6);
+            this.panelField1.Name = "panelField1";
+            this.panelField1.Size = new System.Drawing.Size(403, 52);
+            this.panelField1.TabIndex = 0;
             // 
-            // cmbJenis
+            // lblNasabahTitle
             // 
-            this.cmbJenis.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbJenis.Font = new Font("Segoe UI", 10F);
-            this.cmbJenis.FormattingEnabled = true;
-            this.cmbJenis.Items.AddRange(new object[] {
-            "Setor Sampah (+ Saldo)",
-            "Tarik Saldo (- Saldo)"});
-            this.cmbJenis.Location = new Point(20, 56);
-            this.cmbJenis.Name = "cmbJenis";
-            this.cmbJenis.Size = new Size(240, 25);
-            this.cmbJenis.TabIndex = 2;
-            this.cmbJenis.SelectedIndexChanged += new EventHandler(this.cmbJenis_SelectedIndexChanged);
-            // 
-            // lblNasabah
-            // 
-            this.lblNasabah.AutoSize = true;
-            this.lblNasabah.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblNasabah.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblNasabah.Location = new Point(20, 90);
-            this.lblNasabah.Name = "lblNasabah";
-            this.lblNasabah.Size = new Size(99, 15);
-            this.lblNasabah.TabIndex = 3;
-            this.lblNasabah.Text = "👤 Pilih Nasabah";
+            this.lblNasabahTitle.AutoSize = true;
+            this.lblNasabahTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblNasabahTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblNasabahTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblNasabahTitle.Name = "lblNasabahTitle";
+            this.lblNasabahTitle.Size = new System.Drawing.Size(81, 15);
+            this.lblNasabahTitle.TabIndex = 0;
+            this.lblNasabahTitle.Text = "Pilih Nasabah";
             // 
             // cmbNasabah
             // 
-            this.cmbNasabah.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbNasabah.Font = new Font("Segoe UI", 10F);
+            this.cmbNasabah.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbNasabah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.cmbNasabah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNasabah.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cmbNasabah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
             this.cmbNasabah.FormattingEnabled = true;
-            this.cmbNasabah.Location = new Point(20, 108);
+            this.cmbNasabah.Location = new System.Drawing.Point(0, 18);
             this.cmbNasabah.Name = "cmbNasabah";
-            this.cmbNasabah.Size = new Size(240, 25);
-            this.cmbNasabah.TabIndex = 4;
-            this.cmbNasabah.SelectedIndexChanged += new EventHandler(this.cmbNasabah_SelectedIndexChanged);
+            this.cmbNasabah.Size = new System.Drawing.Size(403, 25);
+            this.cmbNasabah.TabIndex = 2;
+            this.cmbNasabah.SelectedIndexChanged += new System.EventHandler(this.cmbNasabah_SelectedIndexChanged);
             // 
-            // lblSaldoInfo
+            // panelField2
             // 
-            this.lblSaldoInfo.AutoSize = true;
-            this.lblSaldoInfo.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            this.lblSaldoInfo.ForeColor = Color.FromArgb(4, 120, 87);
-            this.lblSaldoInfo.Location = new Point(20, 140);
-            this.lblSaldoInfo.Name = "lblSaldoInfo";
-            this.lblSaldoInfo.Size = new Size(122, 15);
-            this.lblSaldoInfo.TabIndex = 5;
-            this.lblSaldoInfo.Text = "Saldo Saat Ini: Rp 0";
+            this.panelField2.Controls.Add(this.cmbSampah);
+            this.panelField2.Controls.Add(this.lblSampahTitle);
+            this.panelField2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelField2.Location = new System.Drawing.Point(423, 0);
+            this.panelField2.Margin = new System.Windows.Forms.Padding(10, 0, 0, 6);
+            this.panelField2.Name = "panelField2";
+            this.panelField2.Size = new System.Drawing.Size(403, 52);
+            this.panelField2.TabIndex = 1;
             // 
-            // lblSampah
+            // lblSampahTitle
             // 
-            this.lblSampah.AutoSize = true;
-            this.lblSampah.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblSampah.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblSampah.Location = new Point(280, 38);
-            this.lblSampah.Name = "lblSampah";
-            this.lblSampah.Size = new Size(137, 15);
-            this.lblSampah.TabIndex = 6;
-            this.lblSampah.Text = "♻️ Pilih Jenis Sampah";
+            this.lblSampahTitle.AutoSize = true;
+            this.lblSampahTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSampahTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblSampahTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblSampahTitle.Name = "lblSampahTitle";
+            this.lblSampahTitle.Size = new System.Drawing.Size(104, 15);
+            this.lblSampahTitle.TabIndex = 0;
+            this.lblSampahTitle.Text = "Pilih Jenis Sampah";
             // 
             // cmbSampah
             // 
-            this.cmbSampah.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbSampah.Font = new Font("Segoe UI", 10F);
+            this.cmbSampah.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbSampah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.cmbSampah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSampah.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.cmbSampah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
             this.cmbSampah.FormattingEnabled = true;
-            this.cmbSampah.Location = new Point(280, 56);
+            this.cmbSampah.Location = new System.Drawing.Point(0, 18);
             this.cmbSampah.Name = "cmbSampah";
-            this.cmbSampah.Size = new Size(270, 25);
-            this.cmbSampah.TabIndex = 7;
-            this.cmbSampah.SelectedIndexChanged += new EventHandler(this.cmbSampah_SelectedIndexChanged);
+            this.cmbSampah.Size = new System.Drawing.Size(403, 25);
+            this.cmbSampah.TabIndex = 2;
+            this.cmbSampah.SelectedIndexChanged += new System.EventHandler(this.cmbSampah_SelectedIndexChanged);
             // 
-            // lblHargaInfo
+            // panelField3
             // 
-            this.lblHargaInfo.AutoSize = true;
-            this.lblHargaInfo.Font = new Font("Segoe UI", 8.5F, FontStyle.Italic);
-            this.lblHargaInfo.ForeColor = Color.FromArgb(100, 116, 139);
-            this.lblHargaInfo.Location = new Point(280, 84);
-            this.lblHargaInfo.Name = "lblHargaInfo";
-            this.lblHargaInfo.Size = new Size(129, 15);
-            this.lblHargaInfo.TabIndex = 8;
-            this.lblHargaInfo.Text = "Harga per Kg: Rp 0 / Kg";
+            this.panelField3.Controls.Add(this.txtBerat);
+            this.panelField3.Controls.Add(this.lblBeratTitle);
+            this.panelField3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelField3.Location = new System.Drawing.Point(0, 58);
+            this.panelField3.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panelField3.Name = "panelField3";
+            this.panelField3.Size = new System.Drawing.Size(403, 58);
+            this.panelField3.TabIndex = 2;
             // 
-            // lblBerat
+            // lblBeratTitle
             // 
-            this.lblBerat.AutoSize = true;
-            this.lblBerat.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblBerat.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblBerat.Location = new Point(280, 104);
-            this.lblBerat.Name = "lblBerat";
-            this.lblBerat.Size = new Size(76, 15);
-            this.lblBerat.TabIndex = 9;
-            this.lblBerat.Text = "⚖️ Berat (Kg)";
+            this.lblBeratTitle.AutoSize = true;
+            this.lblBeratTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblBeratTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblBeratTitle.Location = new System.Drawing.Point(0, 4);
+            this.lblBeratTitle.Name = "lblBeratTitle";
+            this.lblBeratTitle.Size = new System.Drawing.Size(61, 15);
+            this.lblBeratTitle.TabIndex = 0;
+            this.lblBeratTitle.Text = "Berat (kg)";
             // 
             // txtBerat
             // 
-            this.txtBerat.Font = new Font("Segoe UI", 10F);
-            this.txtBerat.Location = new Point(280, 122);
+            this.txtBerat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBerat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.txtBerat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBerat.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtBerat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.txtBerat.Location = new System.Drawing.Point(0, 24);
             this.txtBerat.Name = "txtBerat";
-            this.txtBerat.Size = new Size(110, 25);
-            this.txtBerat.TabIndex = 10;
-            this.txtBerat.Text = "0";
-            this.txtBerat.TextChanged += new EventHandler(this.txtBerat_TextChanged);
+            this.txtBerat.Size = new System.Drawing.Size(403, 24);
+            this.txtBerat.TabIndex = 2;
+            this.txtBerat.Text = "1";
+            this.txtBerat.TextChanged += new System.EventHandler(this.txtBerat_TextChanged);
             // 
-            // lblTotal
+            // panelField4
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblTotal.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblTotal.Location = new Point(405, 104);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new Size(116, 15);
-            this.lblTotal.TabIndex = 11;
-            this.lblTotal.Text = "💰 Total Harga (Rp)";
+            this.panelField4.Controls.Add(this.dtpTanggal);
+            this.panelField4.Controls.Add(this.lblTanggalTitle);
+            this.panelField4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelField4.Location = new System.Drawing.Point(423, 58);
+            this.panelField4.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panelField4.Name = "panelField4";
+            this.panelField4.Size = new System.Drawing.Size(403, 58);
+            this.panelField4.TabIndex = 3;
             // 
-            // txtTotal
+            // lblTanggalTitle
             // 
-            this.txtTotal.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            this.txtTotal.ForeColor = Color.FromArgb(16, 185, 129);
-            this.txtTotal.Location = new Point(405, 122);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new Size(145, 25);
-            this.txtTotal.TabIndex = 12;
-            this.txtTotal.Text = "0";
+            this.lblTanggalTitle.AutoSize = true;
+            this.lblTanggalTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTanggalTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblTanggalTitle.Location = new System.Drawing.Point(0, 4);
+            this.lblTanggalTitle.Name = "lblTanggalTitle";
+            this.lblTanggalTitle.Size = new System.Drawing.Size(83, 15);
+            this.lblTanggalTitle.TabIndex = 0;
+            this.lblTanggalTitle.Text = "Tanggal Setor";
             // 
-            // lblCatatan
+            // dtpTanggal
             // 
-            this.lblCatatan.AutoSize = true;
-            this.lblCatatan.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblCatatan.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblCatatan.Location = new Point(575, 38);
-            this.lblCatatan.Name = "lblCatatan";
-            this.lblCatatan.Size = new Size(119, 15);
-            this.lblCatatan.TabIndex = 13;
-            this.lblCatatan.Text = "📝 Catatan Transaksi";
+            this.dtpTanggal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpTanggal.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.dtpTanggal.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.dtpTanggal.Location = new System.Drawing.Point(0, 24);
+            this.dtpTanggal.Name = "dtpTanggal";
+            this.dtpTanggal.Size = new System.Drawing.Size(403, 24);
+            this.dtpTanggal.TabIndex = 2;
             // 
-            // txtCatatan
+            // panelCalcBox
             // 
-            this.txtCatatan.Font = new Font("Segoe UI", 10F);
-            this.txtCatatan.Location = new Point(575, 56);
-            this.txtCatatan.Multiline = true;
-            this.txtCatatan.Name = "txtCatatan";
-            this.txtCatatan.Size = new Size(325, 55);
-            this.txtCatatan.TabIndex = 14;
+            this.panelCalcBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+            this.panelCalcBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCalcBox.Controls.Add(this.btnSimpanTrx);
+            this.panelCalcBox.Controls.Add(this.btnCetakStruk);
+            this.panelCalcBox.Controls.Add(this.lblNilaiSetoranVal);
+            this.panelCalcBox.Controls.Add(this.lblNilaiSetoranTitle);
+            this.panelCalcBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCalcBox.Location = new System.Drawing.Point(16, 132);
+            this.panelCalcBox.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.panelCalcBox.Name = "panelCalcBox";
+            this.panelCalcBox.Padding = new System.Windows.Forms.Padding(14);
+            this.panelCalcBox.Size = new System.Drawing.Size(826, 56);
+            this.panelCalcBox.TabIndex = 1;
             // 
-            // panelButtons
+            // lblNilaiSetoranTitle
             // 
-            this.panelButtons.ColumnCount = 2;
-            this.panelButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.panelButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.panelButtons.Controls.Add(this.btnSimpan, 0, 0);
-            this.panelButtons.Controls.Add(this.btnBatal, 1, 0);
-            this.panelButtons.Location = new Point(575, 118);
-            this.panelButtons.Name = "panelButtons";
-            this.panelButtons.RowCount = 1;
-            this.panelButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            this.panelButtons.Size = new Size(325, 42);
-            this.panelButtons.TabIndex = 15;
+            this.lblNilaiSetoranTitle.AutoSize = true;
+            this.lblNilaiSetoranTitle.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.lblNilaiSetoranTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblNilaiSetoranTitle.Location = new System.Drawing.Point(14, 8);
+            this.lblNilaiSetoranTitle.Name = "lblNilaiSetoranTitle";
+            this.lblNilaiSetoranTitle.Size = new System.Drawing.Size(73, 15);
+            this.lblNilaiSetoranTitle.TabIndex = 0;
+            this.lblNilaiSetoranTitle.Text = "Nilai Setoran";
             // 
-            // btnSimpan
+            // lblNilaiSetoranVal
             // 
-            this.btnSimpan.BackColor = Color.FromArgb(16, 185, 129);
-            this.btnSimpan.Cursor = Cursors.Hand;
-            this.btnSimpan.Dock = DockStyle.Fill;
-            this.btnSimpan.FlatAppearance.BorderSize = 0;
-            this.btnSimpan.FlatStyle = FlatStyle.Flat;
-            this.btnSimpan.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.btnSimpan.ForeColor = Color.White;
-            this.btnSimpan.Location = new Point(2, 2);
-            this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new Size(158, 38);
-            this.btnSimpan.TabIndex = 0;
-            this.btnSimpan.Text = "💾 PROSES TRX";
-            this.btnSimpan.UseVisualStyleBackColor = false;
-            this.btnSimpan.Click += new EventHandler(this.btnSimpan_Click);
+            this.lblNilaiSetoranVal.AutoSize = true;
+            this.lblNilaiSetoranVal.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNilaiSetoranVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(122)))), ((int)(((byte)(94)))));
+            this.lblNilaiSetoranVal.Location = new System.Drawing.Point(13, 23);
+            this.lblNilaiSetoranVal.Name = "lblNilaiSetoranVal";
+            this.lblNilaiSetoranVal.Size = new System.Drawing.Size(107, 28);
+            this.lblNilaiSetoranVal.TabIndex = 1;
+            this.lblNilaiSetoranVal.Text = "Rp 15.750";
             // 
-            // btnBatal
+            // btnCetakStruk
             // 
-            this.btnBatal.BackColor = Color.FromArgb(100, 116, 139);
-            this.btnBatal.Cursor = Cursors.Hand;
-            this.btnBatal.Dock = DockStyle.Fill;
-            this.btnBatal.FlatAppearance.BorderSize = 0;
-            this.btnBatal.FlatStyle = FlatStyle.Flat;
-            this.btnBatal.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.btnBatal.ForeColor = Color.White;
-            this.btnBatal.Location = new Point(164, 2);
-            this.btnBatal.Name = "btnBatal";
-            this.btnBatal.Size = new Size(159, 38);
-            this.btnBatal.TabIndex = 1;
-            this.btnBatal.Text = "🔄 BATAL";
-            this.btnBatal.UseVisualStyleBackColor = false;
-            this.btnBatal.Click += new EventHandler(this.btnBatal_Click);
+            this.btnCetakStruk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCetakStruk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
+            this.btnCetakStruk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCetakStruk.FlatAppearance.BorderSize = 0;
+            this.btnCetakStruk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCetakStruk.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnCetakStruk.ForeColor = System.Drawing.Color.White;
+            this.btnCetakStruk.Location = new System.Drawing.Point(510, 10);
+            this.btnCetakStruk.Name = "btnCetakStruk";
+            this.btnCetakStruk.Size = new System.Drawing.Size(150, 34);
+            this.btnCetakStruk.TabIndex = 3;
+            this.btnCetakStruk.Text = "🧾 Cetak Struk Bukti";
+            this.btnCetakStruk.UseVisualStyleBackColor = false;
+            this.btnCetakStruk.Click += new System.EventHandler(this.btnCetakStruk_Click);
+            // 
+            // btnSimpanTrx
+            // 
+            this.btnSimpanTrx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSimpanTrx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(151)))), ((int)(((byte)(31)))));
+            this.btnSimpanTrx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSimpanTrx.FlatAppearance.BorderSize = 0;
+            this.btnSimpanTrx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSimpanTrx.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnSimpanTrx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(26)))), ((int)(((byte)(2)))));
+            this.btnSimpanTrx.Location = new System.Drawing.Point(670, 10);
+            this.btnSimpanTrx.Name = "btnSimpanTrx";
+            this.btnSimpanTrx.Size = new System.Drawing.Size(142, 34);
+            this.btnSimpanTrx.TabIndex = 2;
+            this.btnSimpanTrx.Text = "Simpan Transaksi";
+            this.btnSimpanTrx.UseVisualStyleBackColor = false;
+            this.btnSimpanTrx.Click += new System.EventHandler(this.btnSimpanTrx_Click);
+            // 
+            // panelAudioBox
+            // 
+            this.panelAudioBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
+            this.panelAudioBox.Controls.Add(this.lblAudioInfo);
+            this.panelAudioBox.Controls.Add(this.btnPlaySaveAudio);
+            this.panelAudioBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAudioBox.Location = new System.Drawing.Point(16, 194);
+            this.panelAudioBox.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.panelAudioBox.Name = "panelAudioBox";
+            this.panelAudioBox.Padding = new System.Windows.Forms.Padding(10);
+            this.panelAudioBox.Size = new System.Drawing.Size(826, 48);
+            this.panelAudioBox.TabIndex = 2;
+            // 
+            // btnPlaySaveAudio
+            // 
+            this.btnPlaySaveAudio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(151)))), ((int)(((byte)(31)))));
+            this.btnPlaySaveAudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlaySaveAudio.FlatAppearance.BorderSize = 0;
+            this.btnPlaySaveAudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaySaveAudio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPlaySaveAudio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(26)))), ((int)(((byte)(2)))));
+            this.btnPlaySaveAudio.Location = new System.Drawing.Point(12, 10);
+            this.btnPlaySaveAudio.Name = "btnPlaySaveAudio";
+            this.btnPlaySaveAudio.Size = new System.Drawing.Size(28, 28);
+            this.btnPlaySaveAudio.TabIndex = 0;
+            this.btnPlaySaveAudio.Text = "▶";
+            this.btnPlaySaveAudio.UseVisualStyleBackColor = false;
+            this.btnPlaySaveAudio.Click += new System.EventHandler(this.btnPlaySaveAudio_Click);
+            // 
+            // lblAudioInfo
+            // 
+            this.lblAudioInfo.AutoSize = true;
+            this.lblAudioInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblAudioInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(229)))), ((int)(((byte)(216)))));
+            this.lblAudioInfo.Location = new System.Drawing.Point(48, 16);
+            this.lblAudioInfo.Name = "lblAudioInfo";
+            this.lblAudioInfo.Size = new System.Drawing.Size(282, 15);
+            this.lblAudioInfo.TabIndex = 1;
+            this.lblAudioInfo.Text = "Suara \"Berhasil Disimpan\" saat transaksi tersimpan";
             // 
             // panelGridCard
             // 
-            this.panelGridCard.BackColor = Color.White;
+            this.panelGridCard.BackColor = System.Drawing.Color.White;
+            this.panelGridCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGridCard.Controls.Add(this.dgvTransaksi);
-            this.panelGridCard.Controls.Add(this.panelSearchBox);
-            this.panelGridCard.Dock = DockStyle.Fill;
-            this.panelGridCard.Location = new Point(20, 230);
-            this.panelGridCard.Margin = new Padding(0);
+            this.panelGridCard.Controls.Add(this.panelRiwayatHeader);
+            this.panelGridCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGridCard.Location = new System.Drawing.Point(20, 330);
+            this.panelGridCard.Margin = new System.Windows.Forms.Padding(0, 14, 0, 0);
             this.panelGridCard.Name = "panelGridCard";
-            this.panelGridCard.Padding = new Padding(15);
-            this.panelGridCard.Size = new Size(920, 405);
-            this.panelGridCard.TabIndex = 1;
+            this.panelGridCard.Padding = new System.Windows.Forms.Padding(1);
+            this.panelGridCard.Size = new System.Drawing.Size(860, 330);
+            this.panelGridCard.TabIndex = 2;
+            // 
+            // panelRiwayatHeader
+            // 
+            this.panelRiwayatHeader.Controls.Add(this.lblRiwayatTitle);
+            this.panelRiwayatHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRiwayatHeader.Location = new System.Drawing.Point(1, 1);
+            this.panelRiwayatHeader.Name = "panelRiwayatHeader";
+            this.panelRiwayatHeader.Padding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.panelRiwayatHeader.Size = new System.Drawing.Size(856, 36);
+            this.panelRiwayatHeader.TabIndex = 0;
+            // 
+            // lblRiwayatTitle
+            // 
+            this.lblRiwayatTitle.AutoSize = true;
+            this.lblRiwayatTitle.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.lblRiwayatTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
+            this.lblRiwayatTitle.Location = new System.Drawing.Point(10, 8);
+            this.lblRiwayatTitle.Name = "lblRiwayatTitle";
+            this.lblRiwayatTitle.Size = new System.Drawing.Size(155, 17);
+            this.lblRiwayatTitle.TabIndex = 0;
+            this.lblRiwayatTitle.Text = "Riwayat Transaksi Setor";
             // 
             // dgvTransaksi
             // 
             this.dgvTransaksi.AllowUserToAddRows = false;
             this.dgvTransaksi.AllowUserToDeleteRows = false;
-            this.dgvTransaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTransaksi.BackgroundColor = Color.White;
-            this.dgvTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransaksi.Dock = DockStyle.Fill;
-            this.dgvTransaksi.Location = new Point(15, 60);
-            this.dgvTransaksi.MultiSelect = false;
+            this.dgvTransaksi.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransaksi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTransaksi.Location = new System.Drawing.Point(1, 37);
             this.dgvTransaksi.Name = "dgvTransaksi";
             this.dgvTransaksi.ReadOnly = true;
-            this.dgvTransaksi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTransaksi.Size = new Size(890, 330);
+            this.dgvTransaksi.Size = new System.Drawing.Size(856, 290);
             this.dgvTransaksi.TabIndex = 1;
-            this.dgvTransaksi.CellClick += new DataGridViewCellEventHandler(this.dgvTransaksi_CellClick);
-            // 
-            // panelSearchBox
-            // 
-            this.panelSearchBox.BackColor = Color.FromArgb(240, 244, 242);
-            this.panelSearchBox.Controls.Add(this.lblRecordBadge);
-            this.panelSearchBox.Controls.Add(this.txtCari);
-            this.panelSearchBox.Controls.Add(this.lblCariIcon);
-            this.panelSearchBox.Dock = DockStyle.Top;
-            this.panelSearchBox.Location = new Point(15, 15);
-            this.panelSearchBox.Name = "panelSearchBox";
-            this.panelSearchBox.Padding = new Padding(10, 8, 10, 8);
-            this.panelSearchBox.Size = new Size(890, 45);
-            this.panelSearchBox.TabIndex = 0;
-            // 
-            // lblRecordBadge
-            // 
-            this.lblRecordBadge.Dock = DockStyle.Right;
-            this.lblRecordBadge.AutoSize = true;
-            this.lblRecordBadge.BackColor = Color.FromArgb(16, 185, 129);
-            this.lblRecordBadge.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            this.lblRecordBadge.ForeColor = Color.White;
-            this.lblRecordBadge.Location = new Point(730, 8);
-            this.lblRecordBadge.Padding = new Padding(8, 4, 8, 4);
-            this.lblRecordBadge.Name = "lblRecordBadge";
-            this.lblRecordBadge.Size = new Size(150, 23);
-            this.lblRecordBadge.TabIndex = 2;
-            this.lblRecordBadge.Text = "📌 TRANSAKSI: 0 RECORD";
-            // 
-            // txtCari
-            // 
-            this.txtCari.BackColor = Color.FromArgb(240, 244, 242);
-            this.txtCari.BorderStyle = BorderStyle.None;
-            this.txtCari.Dock = DockStyle.Fill;
-            this.txtCari.Font = new Font("Segoe UI", 10.5F);
-            this.txtCari.Location = new Point(125, 8);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new Size(605, 19);
-            this.txtCari.TabIndex = 1;
-            this.txtCari.TextChanged += new EventHandler(this.txtCari_TextChanged);
-            // 
-            // lblCariIcon
-            // 
-            this.lblCariIcon.AutoSize = true;
-            this.lblCariIcon.Dock = DockStyle.Left;
-            this.lblCariIcon.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.lblCariIcon.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblCariIcon.Location = new Point(10, 8);
-            this.lblCariIcon.Name = "lblCariIcon";
-            this.lblCariIcon.Size = new Size(115, 17);
-            this.lblCariIcon.TabIndex = 0;
-            this.lblCariIcon.Text = "🔍 Cari Riwayat: ";
+            this.dgvTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaksi_CellClick);
             // 
             // FormTransaksi
             // 
-            this.AutoScaleDimensions = new SizeF(6F, 13F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(240, 244, 242);
-            this.ClientSize = new Size(960, 655);
-            this.Controls.Add(this.panelMainContainer);
-            this.FormBorderStyle = FormBorderStyle.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            this.ClientSize = new System.Drawing.Size(900, 680);
+            this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTransaksi";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Transaksi Setor & Tarik";
-            this.Load += new EventHandler(this.FormTransaksi_Load);
-            this.panelMainContainer.ResumeLayout(false);
-            this.panelFormCard.ResumeLayout(false);
-            this.panelFormCard.PerformLayout();
-            this.panelButtons.ResumeLayout(false);
+            this.Text = "Transaksi Setor";
+            this.Load += new System.EventHandler(this.FormTransaksi_Load);
+            this.panelMain.ResumeLayout(false);
             this.panelGridCard.ResumeLayout(false);
-            this.panelSearchBox.ResumeLayout(false);
-            this.panelSearchBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).EndInit();
+            this.panelRiwayatHeader.ResumeLayout(false);
+            this.panelRiwayatHeader.PerformLayout();
+            this.panelFormCard.ResumeLayout(false);
+            this.panelAudioBox.ResumeLayout(false);
+            this.panelAudioBox.PerformLayout();
+            this.panelCalcBox.ResumeLayout(false);
+            this.panelCalcBox.PerformLayout();
+            this.tableLayoutPanelFields.ResumeLayout(false);
+            this.panelField4.ResumeLayout(false);
+            this.panelField4.PerformLayout();
+            this.panelField3.ResumeLayout(false);
+            this.panelField3.PerformLayout();
+            this.panelField2.ResumeLayout(false);
+            this.panelField2.PerformLayout();
+            this.panelField1.ResumeLayout(false);
+            this.panelField1.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel panelMainContainer;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Panel panelFormCard;
-        private System.Windows.Forms.Label lblFormHeader;
-        private System.Windows.Forms.Label lblJenis;
-        private System.Windows.Forms.ComboBox cmbJenis;
-        private System.Windows.Forms.Label lblNasabah;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFields;
+        private System.Windows.Forms.Panel panelField1;
+        private System.Windows.Forms.Label lblNasabahTitle;
         private System.Windows.Forms.ComboBox cmbNasabah;
-        private System.Windows.Forms.Label lblSaldoInfo;
-        private System.Windows.Forms.Label lblSampah;
+        private System.Windows.Forms.Panel panelField2;
+        private System.Windows.Forms.Label lblSampahTitle;
         private System.Windows.Forms.ComboBox cmbSampah;
-        private System.Windows.Forms.Label lblHargaInfo;
-        private System.Windows.Forms.Label lblBerat;
+        private System.Windows.Forms.Panel panelField3;
+        private System.Windows.Forms.Label lblBeratTitle;
         private System.Windows.Forms.TextBox txtBerat;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Label lblCatatan;
-        private System.Windows.Forms.TextBox txtCatatan;
-        private System.Windows.Forms.TableLayoutPanel panelButtons;
-        private System.Windows.Forms.Button btnSimpan;
-        private System.Windows.Forms.Button btnBatal;
+        private System.Windows.Forms.Panel panelField4;
+        private System.Windows.Forms.Label lblTanggalTitle;
+        private System.Windows.Forms.DateTimePicker dtpTanggal;
+        private System.Windows.Forms.Panel panelCalcBox;
+        private System.Windows.Forms.Label lblNilaiSetoranTitle;
+        private System.Windows.Forms.Label lblNilaiSetoranVal;
+        private System.Windows.Forms.Button btnSimpanTrx;
+        private System.Windows.Forms.Button btnCetakStruk;
+        private System.Windows.Forms.Panel panelAudioBox;
+        private System.Windows.Forms.Button btnPlaySaveAudio;
+        private System.Windows.Forms.Label lblAudioInfo;
         private System.Windows.Forms.Panel panelGridCard;
-        private System.Windows.Forms.Panel panelSearchBox;
-        private System.Windows.Forms.Label lblCariIcon;
-        private System.Windows.Forms.TextBox txtCari;
-        private System.Windows.Forms.Label lblRecordBadge;
+        private System.Windows.Forms.Panel panelRiwayatHeader;
+        private System.Windows.Forms.Label lblRiwayatTitle;
         private System.Windows.Forms.DataGridView dgvTransaksi;
     }
 }

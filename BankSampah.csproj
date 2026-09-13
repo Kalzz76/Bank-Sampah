@@ -38,6 +38,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -45,17 +46,36 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="QRCoder">
+      <HintPath>Libs\QRCoder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Koneksi.cs" />
     <Compile Include="SoundHelper.cs" />
     <Compile Include="DataStore.cs" />
     <Compile Include="UIHelper.cs" />
+    <Compile Include="QRCodeHelper.cs" />
+    <Compile Include="WargaWebServer.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPortalWarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPortalWarga.Designer.cs">
+      <DependentUpon>FormPortalWarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPortalPetugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPortalPetugas.Designer.cs">
+      <DependentUpon>FormPortalPetugas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -75,11 +95,11 @@
     <Compile Include="FormSampah.Designer.cs">
       <DependentUpon>FormSampah.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUser.cs">
+    <Compile Include="FormRiwayatNasabah.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUser.Designer.cs">
-      <DependentUpon>FormUser.cs</DependentUpon>
+    <Compile Include="FormRiwayatNasabah.Designer.cs">
+      <DependentUpon>FormRiwayatNasabah.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTransaksi.cs">
       <SubType>Form</SubType>
@@ -92,6 +112,18 @@
     </Compile>
     <Compile Include="FormPengaturan.Designer.cs">
       <DependentUpon>FormPengaturan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaporan.Designer.cs">
+      <DependentUpon>FormLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPenjemputan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPenjemputan.Designer.cs">
+      <DependentUpon>FormPenjemputan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVideoPlayer.cs">
       <SubType>Form</SubType>
@@ -131,6 +163,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Audio\alert.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Web\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Web\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Web\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Scripts\camera_scanner.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

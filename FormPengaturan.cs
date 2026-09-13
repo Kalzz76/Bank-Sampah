@@ -17,6 +17,35 @@ namespace BankSampah
         private void FormPengaturan_Load(object sender, EventArgs e)
         {
             UIHelper.ApplyModernGridStyle(dgvUser);
+
+            UIHelper.MakeRounded(panelUserFormCard, 10);
+            UIHelper.MakeRounded(panelUserGridCard, 10);
+            UIHelper.MakeRounded(cardAudio1, 10);
+            UIHelper.MakeRounded(cardAudio2, 10);
+            UIHelper.MakeRounded(cardAudio3, 10);
+            UIHelper.MakeRounded(cardSystemMain, 10);
+            UIHelper.MakeRounded(cardSys1, 8);
+            UIHelper.MakeRounded(cardSys2, 8);
+            UIHelper.MakeRounded(cardSys3, 8);
+            UIHelper.MakeRounded(cardSys4, 8);
+            UIHelper.MakeRounded(btnTabUser, 8);
+            UIHelper.MakeRounded(btnTabAudio, 8);
+            UIHelper.MakeRounded(btnTabSystem, 8);
+            UIHelper.StyleButtonTeal(btnSimpanUser);
+            UIHelper.StyleButtonDanger(btnHapusUser);
+            UIHelper.StyleButtonOutline(btnBatalUser);
+            UIHelper.StyleButtonGold(btnTestLoginSound);
+            UIHelper.StyleButtonGold(btnTestSaveSound);
+            UIHelper.StyleButtonGold(btnTestAlertSound);
+            UIHelper.StyleButtonTeal(btnTestDbConn);
+            UIHelper.StyleButtonDark(btnBackupDatabase);
+            UIHelper.MakeRounded(btnBackupDatabase, 6);
+
+            UIHelper.MakeRounded(txtUsername, 6);
+            UIHelper.MakeRounded(txtPassword, 6);
+            UIHelper.MakeRounded(txtNama, 6);
+            UIHelper.MakeRounded(cmbRole, 6);
+
             LoadUserData();
             cmbRole.SelectedIndex = 1; // Default Petugas
 
@@ -40,23 +69,23 @@ namespace BankSampah
 
             if (tabName == "User")
             {
-                btnTabUser.BackColor = Color.FromArgb(6, 78, 59);
-                btnTabUser.ForeColor = Color.White;
+                btnTabUser.BackColor = UIHelper.Pine;
+                btnTabUser.ForeColor = UIHelper.White;
                 panelUserTab.Visible = true;
                 panelUserTab.BringToFront();
                 LoadUserData();
             }
             else if (tabName == "Audio")
             {
-                btnTabAudio.BackColor = Color.FromArgb(6, 78, 59);
-                btnTabAudio.ForeColor = Color.White;
+                btnTabAudio.BackColor = UIHelper.Pine;
+                btnTabAudio.ForeColor = UIHelper.White;
                 panelAudioTab.Visible = true;
                 panelAudioTab.BringToFront();
             }
             else if (tabName == "System")
             {
-                btnTabSystem.BackColor = Color.FromArgb(6, 78, 59);
-                btnTabSystem.ForeColor = Color.White;
+                btnTabSystem.BackColor = UIHelper.Pine;
+                btnTabSystem.ForeColor = UIHelper.White;
                 panelSystemTab.Visible = true;
                 panelSystemTab.BringToFront();
             }
@@ -64,14 +93,14 @@ namespace BankSampah
 
         private void ResetTabPills()
         {
-            btnTabUser.BackColor = Color.FromArgb(240, 244, 242);
-            btnTabUser.ForeColor = Color.FromArgb(71, 85, 105);
+            btnTabUser.BackColor = UIHelper.Sage;
+            btnTabUser.ForeColor = UIHelper.InkSoft;
 
-            btnTabAudio.BackColor = Color.FromArgb(240, 244, 242);
-            btnTabAudio.ForeColor = Color.FromArgb(71, 85, 105);
+            btnTabAudio.BackColor = UIHelper.Sage;
+            btnTabAudio.ForeColor = UIHelper.InkSoft;
 
-            btnTabSystem.BackColor = Color.FromArgb(240, 244, 242);
-            btnTabSystem.ForeColor = Color.FromArgb(71, 85, 105);
+            btnTabSystem.BackColor = UIHelper.Sage;
+            btnTabSystem.ForeColor = UIHelper.InkSoft;
         }
 
         private void btnTabUser_Click(object sender, EventArgs e)
@@ -170,12 +199,27 @@ namespace BankSampah
             SoundHelper.PlayLoginSound();
         }
 
+        private void btnTestLoginSound_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayLoginSound();
+        }
+
         private void btnTestSave_Click(object sender, EventArgs e)
         {
             SoundHelper.PlaySaveSound();
         }
 
+        private void btnTestSaveSound_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlaySaveSound();
+        }
+
         private void btnTestAlert_Click(object sender, EventArgs e)
+        {
+            SoundHelper.PlayAlertSound();
+        }
+
+        private void btnTestAlertSound_Click(object sender, EventArgs e)
         {
             SoundHelper.PlayAlertSound();
         }
@@ -203,6 +247,51 @@ namespace BankSampah
             {
                 SoundHelper.PlayAlertSound();
                 MessageBox.Show("Error saat tes koneksi: " + ex.Message, "Error Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBackupDatabase_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "SQL Server Backup (*.bak)|*.bak|All Files (*.*)|*.*";
+                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                sfd.FileName = string.Format("db_banksampah_backup_{0}.bak", timestamp);
+                sfd.Title = "Pilih Lokasi Penyimpanan Backup Database";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string targetFile = sfd.FileName;
+                    string msg = "";
+                    bool ok = Koneksi.BackupDatabase(targetFile, out msg);
+
+                    if (ok)
+                    {
+                        SoundHelper.PlaySaveSound();
+                        MessageBox.Show(msg, "Backup Database Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string fallbackFolder = @"C:\Backup_BankSampah";
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(fallbackFolder))
+                                System.IO.Directory.CreateDirectory(fallbackFolder);
+                            string fallbackFile = System.IO.Path.Combine(fallbackFolder, string.Format("db_banksampah_{0}.bak", timestamp));
+                            string fallbackMsg = "";
+                            if (Koneksi.BackupDatabase(fallbackFile, out fallbackMsg))
+                            {
+                                SoundHelper.PlaySaveSound();
+                                MessageBox.Show("Backup database berhasil disimpan di folder publik:\n" + fallbackFile, "Backup Database Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                        }
+                        catch { }
+
+                        SoundHelper.PlayAlertSound();
+                        MessageBox.Show(msg, "Gagal Backup Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

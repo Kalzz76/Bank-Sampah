@@ -16,6 +16,7 @@ GO
 
 -- 2. Hapus Tabel Lama Jika Ada (Reverse Order Dependencies)
 IF OBJECT_ID('tb_transaksi', 'U') IS NOT NULL DROP TABLE tb_transaksi;
+IF OBJECT_ID('tb_penjemputan', 'U') IS NOT NULL DROP TABLE tb_penjemputan;
 IF OBJECT_ID('tb_sampah', 'U') IS NOT NULL DROP TABLE tb_sampah;
 IF OBJECT_ID('tb_nasabah', 'U') IS NOT NULL DROP TABLE tb_nasabah;
 IF OBJECT_ID('tb_user', 'U') IS NOT NULL DROP TABLE tb_user;
@@ -74,7 +75,26 @@ CREATE TABLE tb_transaksi (
 );
 GO
 
--- 7. Seed Data Awal (Initial Data)
+-- 7. Tabel Penjemputan Sampah (Door-to-Door Pickup Service ala Pastiklola)
+CREATE TABLE tb_penjemputan (
+    id_penjemputan INT IDENTITY(1,1) PRIMARY KEY,
+    kode_booking VARCHAR(30) NOT NULL UNIQUE,
+    id_nasabah INT NOT NULL,
+    alamat_jemput VARCHAR(255) NOT NULL,
+    no_hp VARCHAR(25) NOT NULL,
+    tanggal_jemput DATE NOT NULL,
+    waktu_jemput VARCHAR(30) NOT NULL,
+    armada_petugas VARCHAR(100) NOT NULL,
+    estimasi_sampah VARCHAR(255) NOT NULL,
+    estimasi_berat DECIMAL(10, 2) DEFAULT 0,
+    status VARCHAR(30) NOT NULL DEFAULT 'Menunggu', -- 'Menunggu', 'Dalam Penjemputan', 'Selesai', 'Batal'
+    catatan VARCHAR(255) NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    CONSTRAINT FK_Penjemputan_Nasabah FOREIGN KEY (id_nasabah) REFERENCES tb_nasabah(id_nasabah) ON DELETE CASCADE
+);
+GO
+
+-- 8. Seed Data Awal (Initial Data)
 INSERT INTO tb_user (username, password, nama_lengkap, role) VALUES
 ('admin', 'admin123', 'Administrator Utama', 'Admin'),
 ('petugas', 'petugas123', 'Budi Santoso', 'Petugas');
@@ -89,6 +109,7 @@ INSERT INTO tb_sampah (nama_sampah, jenis_sampah, kategori, harga_per_kg, foto) 
 ('Kardus Bekas Tebal', 'Anorganik', 'Kertas', 2500.00, 'kardus.png'),
 ('Besi Tua & Kaleng', 'Anorganik', 'Logam', 7000.00, 'besi_kaleng.png'),
 ('Botol Kaca Bening', 'Anorganik', 'Kaca', 1500.00, 'botol_kaca.png'),
+('Minyak Jelantah Rumah Tangga', 'Anorganik', 'Minyak Jelantah', 6500.00, 'minyak_jelantah.png'),
 ('Kompos & Sisa Sayuran', 'Organik', 'Kompos', 1000.00, 'organik_kompos.png'),
 ('Baterai & Akumulator Bekas', 'B3 (Berbahaya)', 'B3 Elektronik', 12000.00, 'baterai_b3.png'),
 ('Kertas HVS Bekas', 'Anorganik', 'Kertas', 3000.00, 'kertas_hvs.png'),
@@ -98,6 +119,12 @@ INSERT INTO tb_transaksi (kode_transaksi, id_nasabah, jenis_transaksi, id_sampah
 ('TRX-20260826-001', 1, 'Setor', 1, 10.00, 45000.00, 1, 'Setoran botol PET 10 Kg'),
 ('TRX-20260826-002', 2, 'Setor', 2, 11.40, 28500.00, 2, 'Setoran kardus bekas 11.4 Kg'),
 ('TRX-20260826-003', 3, 'Setor', 3, 17.14, 120000.00, 1, 'Setoran besi tua 17.14 Kg');
+
+INSERT INTO tb_penjemputan (kode_booking, id_nasabah, alamat_jemput, no_hp, tanggal_jemput, waktu_jemput, armada_petugas, estimasi_sampah, estimasi_berat, status, catatan) VALUES
+('PKP-20260910-001', 1, 'Jl. Soekarno Hatta No. 12', '081234567890', CAST(GETDATE() AS DATE), '09:00 - 10:30 WIB', 'Budi Santoso (Motor Roda Tiga)', 'Kardus Tebal & Botol Plastik PET', 15.50, 'Menunggu', 'Mohon jemput di depan pagar rumah'),
+('PKP-20260910-002', 2, 'Jl. Buah Batu No. 45', '082198765432', CAST(GETDATE() AS DATE), '11:00 - 12:30 WIB', 'Budi Santoso (Motor Roda Tiga)', 'Minyak Jelantah 5L & Kaleng Minuman', 8.20, 'Dalam Penjemputan', 'Armada sudah mengarah ke lokasi'),
+('PKP-20260909-001', 3, 'Jl. Kopo Cirangrang No. 88', '085712344321', CAST(DATEADD(day, -1, GETDATE()) AS DATE), '14:00 - 15:30 WIB', 'Budi Santoso (Motor Roda Tiga)', 'Besi Tua & Kaleng', 17.14, 'Selesai', 'Telah berhasil dikonversi ke setoran');
 GO
 
-PRINT 'Database db_banksampah berhasil dibuat dan diisi data sampel (termasuk kelas Organik, Anorganik, B3 dan foto)!';
+PRINT 'Database db_banksampah berhasil dibuat dan diisi data sampel (termasuk fitur Penjemputan dan Minyak Jelantah)!';
+

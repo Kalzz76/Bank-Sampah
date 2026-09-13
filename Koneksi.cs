@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -10,10 +11,30 @@ namespace BankSampah
         private static string connString = @"Server=localhost;Database=db_banksampah;Integrated Security=True;TrustServerCertificate=True;";
         private static string connStringExpress = @"Server=.\SQLEXPRESS;Database=db_banksampah;Integrated Security=True;TrustServerCertificate=True;";
         
-        private static string _activeConnectionString = connString;
+        private static string _activeConnectionString = null;
         public static string ActiveConnectionString 
         { 
-            get { return _activeConnectionString; } 
+            get 
+            { 
+                if (string.IsNullOrEmpty(_activeConnectionString))
+                {
+                    try
+                    {
+                        var cs = ConfigurationManager.ConnectionStrings["DbBankSampah"];
+                        if (cs != null && !string.IsNullOrWhiteSpace(cs.ConnectionString))
+                        {
+                            _activeConnectionString = cs.ConnectionString;
+                        }
+                    }
+                    catch { }
+
+                    if (string.IsNullOrEmpty(_activeConnectionString))
+                    {
+                        _activeConnectionString = connString;
+                    }
+                }
+                return _activeConnectionString; 
+            } 
             set { _activeConnectionString = value; } 
         }
 
@@ -28,6 +49,18 @@ namespace BankSampah
             }
             catch
             {
+                if (ActiveConnectionString != connString)
+                {
+                    try
+                    {
+                        conn = new SqlConnection(connString);
+                        conn.Open();
+                        ActiveConnectionString = connString;
+                        return conn;
+                    }
+                    catch { }
+                }
+
                 try
                 {
                     conn = new SqlConnection(connStringExpress);
@@ -105,6 +138,44 @@ namespace BankSampah
             using (SqlConnection conn = GetConnection())
             {
                 return (conn != null && conn.State == ConnectionState.Open);
+            }
+        }
+
+        public static bool BackupDatabase(string targetFilePath, out string message)
+        {
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                {
+                    if (conn == null)
+                    {
+                        message = "Koneksi database SQL Server tidak tersedia.";
+                        return false;
+                    }
+
+                    string dir = System.IO.Path.GetDirectoryName(targetFilePath);
+                    if (!string.IsNullOrEmpty(dir) && !System.IO.Directory.Exists(dir))
+                    {
+                        System.IO.Directory.CreateDirectory(dir);
+                    }
+
+                    string dbName = string.IsNullOrEmpty(conn.Database) ? "db_banksampah" : conn.Database;
+                    string sql = string.Format("BACKUP DATABASE [{0}] TO DISK = @path WITH FORMAT, INIT, NAME = 'Full Backup of db_banksampah';", dbName);
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.CommandTimeout = 120;
+                        cmd.Parameters.AddWithValue("@path", targetFilePath);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    message = "Backup database berhasil disimpan di:\n" + targetFilePath;
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                message = "Gagal melakukan backup database: " + ex.Message;
+                return false;
             }
         }
     }

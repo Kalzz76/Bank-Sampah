@@ -13,7 +13,20 @@ namespace BankSampah
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            try
+            {
+                WargaWebServer.Start();
+            }
+            catch { }
+
             Application.Run(new FormLogin());
+
+            try
+            {
+                WargaWebServer.Stop();
+            }
+            catch { }
         }
     }
 }

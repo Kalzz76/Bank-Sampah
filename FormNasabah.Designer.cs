@@ -21,374 +21,477 @@ namespace BankSampah
 
         private void InitializeComponent()
         {
-            this.panelMainContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.panelGridCard = new System.Windows.Forms.Panel();
+            this.dgvNasabah = new System.Windows.Forms.DataGridView();
+            this.panelSearch = new System.Windows.Forms.Panel();
+            this.txtCari = new System.Windows.Forms.TextBox();
+            this.lblCariTitle = new System.Windows.Forms.Label();
             this.panelFormCard = new System.Windows.Forms.Panel();
-            this.lblFormHeader = new System.Windows.Forms.Label();
-            this.lblKode = new System.Windows.Forms.Label();
-            this.txtKode = new System.Windows.Forms.TextBox();
-            this.lblNama = new System.Windows.Forms.Label();
-            this.txtNama = new System.Windows.Forms.TextBox();
-            this.lblAlamat = new System.Windows.Forms.Label();
-            this.txtAlamat = new System.Windows.Forms.TextBox();
-            this.lblNoHp = new System.Windows.Forms.Label();
-            this.txtNoHp = new System.Windows.Forms.TextBox();
-            this.panelButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.panelButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSimpan = new System.Windows.Forms.Button();
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
             this.btnBatal = new System.Windows.Forms.Button();
-            this.panelGridCard = new System.Windows.Forms.Panel();
-            this.dgvNasabah = new System.Windows.Forms.DataGridView();
-            this.panelSearchBox = new System.Windows.Forms.Panel();
-            this.lblRecordBadge = new System.Windows.Forms.Label();
-            this.txtCari = new System.Windows.Forms.TextBox();
-            this.lblCariIcon = new System.Windows.Forms.Label();
-            this.panelMainContainer.SuspendLayout();
+            this.btnRiwayat = new System.Windows.Forms.Button();
+            this.tableLayoutPanelFields = new System.Windows.Forms.TableLayoutPanel();
+            this.panelPhotoCol = new System.Windows.Forms.Panel();
+            this.btnPilihFoto = new System.Windows.Forms.Button();
+            this.picNasabah = new System.Windows.Forms.PictureBox();
+            this.lblFotoTitle = new System.Windows.Forms.Label();
+            this.panelInputsCol = new System.Windows.Forms.Panel();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
+            this.lblAlamatTitle = new System.Windows.Forms.Label();
+            this.txtNoHp = new System.Windows.Forms.TextBox();
+            this.lblNoHpTitle = new System.Windows.Forms.Label();
+            this.txtNama = new System.Windows.Forms.TextBox();
+            this.lblNamaTitle = new System.Windows.Forms.Label();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panelMain.SuspendLayout();
+            this.panelGridCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNasabah)).BeginInit();
+            this.panelSearch.SuspendLayout();
             this.panelFormCard.SuspendLayout();
             this.panelButtons.SuspendLayout();
-            this.panelGridCard.SuspendLayout();
-            this.panelSearchBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNasabah)).BeginInit();
+            this.tableLayoutPanelFields.SuspendLayout();
+            this.panelPhotoCol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picNasabah)).BeginInit();
+            this.panelInputsCol.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMainContainer
+            // panelMain
             // 
-            this.panelMainContainer.ColumnCount = 1;
-            this.panelMainContainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            this.panelMainContainer.Controls.Add(this.panelFormCard, 0, 0);
-            this.panelMainContainer.Controls.Add(this.panelGridCard, 0, 1);
-            this.panelMainContainer.Dock = DockStyle.Fill;
-            this.panelMainContainer.Location = new Point(0, 0);
-            this.panelMainContainer.Name = "panelMainContainer";
-            this.panelMainContainer.Padding = new Padding(20);
-            this.panelMainContainer.RowCount = 2;
-            this.panelMainContainer.RowStyles.Add(new RowStyle(SizeType.Absolute, 200F));
-            this.panelMainContainer.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            this.panelMainContainer.Size = new Size(960, 655);
-            this.panelMainContainer.TabIndex = 0;
+            this.panelMain.AutoScroll = true;
+            this.panelMain.Controls.Add(this.panelGridCard);
+            this.panelMain.Controls.Add(this.panelSearch);
+            this.panelMain.Controls.Add(this.panelFormCard);
+            this.panelMain.Controls.Add(this.panelHeader);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Padding = new System.Windows.Forms.Padding(20);
+            this.panelMain.Size = new System.Drawing.Size(900, 650);
+            this.panelMain.TabIndex = 0;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.lblDesc);
+            this.panelHeader.Controls.Add(this.lblTitle);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(20, 20);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(860, 50);
+            this.panelHeader.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(134, 25);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Data Nasabah";
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblDesc.Location = new System.Drawing.Point(1, 28);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(325, 17);
+            this.lblDesc.TabIndex = 2;
+            this.lblDesc.Text = "Kelola data warga yang menjadi nasabah bank sampah.";
             // 
             // panelFormCard
             // 
-            this.panelFormCard.BackColor = Color.White;
-            this.panelFormCard.Controls.Add(this.lblFormHeader);
-            this.panelFormCard.Controls.Add(this.lblKode);
-            this.panelFormCard.Controls.Add(this.txtKode);
-            this.panelFormCard.Controls.Add(this.lblNama);
-            this.panelFormCard.Controls.Add(this.txtNama);
-            this.panelFormCard.Controls.Add(this.lblNoHp);
-            this.panelFormCard.Controls.Add(this.txtNoHp);
-            this.panelFormCard.Controls.Add(this.lblAlamat);
-            this.panelFormCard.Controls.Add(this.txtAlamat);
+            this.panelFormCard.BackColor = System.Drawing.Color.White;
+            this.panelFormCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFormCard.Controls.Add(this.panelButtons);
-            this.panelFormCard.Dock = DockStyle.Fill;
-            this.panelFormCard.Location = new Point(20, 20);
-            this.panelFormCard.Margin = new Padding(0, 0, 0, 15);
+            this.panelFormCard.Controls.Add(this.tableLayoutPanelFields);
+            this.panelFormCard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFormCard.Location = new System.Drawing.Point(20, 70);
             this.panelFormCard.Name = "panelFormCard";
-            this.panelFormCard.Padding = new Padding(20);
-            this.panelFormCard.Size = new Size(920, 185);
-            this.panelFormCard.TabIndex = 0;
+            this.panelFormCard.Padding = new System.Windows.Forms.Padding(16);
+            this.panelFormCard.Size = new System.Drawing.Size(860, 246);
+            this.panelFormCard.TabIndex = 1;
             // 
-            // lblFormHeader
+            // tableLayoutPanelFields
             // 
-            this.lblFormHeader.AutoSize = true;
-            this.lblFormHeader.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.lblFormHeader.ForeColor = Color.FromArgb(6, 78, 59);
-            this.lblFormHeader.Location = new Point(20, 10);
-            this.lblFormHeader.Name = "lblFormHeader";
-            this.lblFormHeader.Size = new Size(198, 20);
-            this.lblFormHeader.TabIndex = 0;
-            this.lblFormHeader.Text = "📝 Form Input Data Nasabah";
+            this.tableLayoutPanelFields.ColumnCount = 2;
+            this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFields.Controls.Add(this.panelPhotoCol, 0, 0);
+            this.tableLayoutPanelFields.Controls.Add(this.panelInputsCol, 1, 0);
+            this.tableLayoutPanelFields.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanelFields.Location = new System.Drawing.Point(16, 16);
+            this.tableLayoutPanelFields.Name = "tableLayoutPanelFields";
+            this.tableLayoutPanelFields.RowCount = 1;
+            this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFields.Size = new System.Drawing.Size(826, 170);
+            this.tableLayoutPanelFields.TabIndex = 0;
             // 
-            // lblKode
+            // panelPhotoCol
             // 
-            this.lblKode.AutoSize = true;
-            this.lblKode.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblKode.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblKode.Location = new Point(20, 38);
-            this.lblKode.Name = "lblKode";
-            this.lblKode.Size = new Size(97, 15);
-            this.lblKode.TabIndex = 1;
-            this.lblKode.Text = "📌 Kode Nasabah";
+            this.panelPhotoCol.Controls.Add(this.btnPilihFoto);
+            this.panelPhotoCol.Controls.Add(this.picNasabah);
+            this.panelPhotoCol.Controls.Add(this.lblFotoTitle);
+            this.panelPhotoCol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPhotoCol.Location = new System.Drawing.Point(0, 0);
+            this.panelPhotoCol.Margin = new System.Windows.Forms.Padding(0);
+            this.panelPhotoCol.Name = "panelPhotoCol";
+            this.panelPhotoCol.Size = new System.Drawing.Size(120, 170);
+            this.panelPhotoCol.TabIndex = 0;
             // 
-            // txtKode
+            // lblFotoTitle
             // 
-            this.txtKode.Font = new Font("Segoe UI", 10F);
-            this.txtKode.Location = new Point(20, 56);
-            this.txtKode.Name = "txtKode";
-            this.txtKode.Size = new Size(180, 25);
-            this.txtKode.TabIndex = 2;
+            this.lblFotoTitle.AutoSize = true;
+            this.lblFotoTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblFotoTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblFotoTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblFotoTitle.Name = "lblFotoTitle";
+            this.lblFotoTitle.Size = new System.Drawing.Size(80, 15);
+            this.lblFotoTitle.TabIndex = 0;
+            this.lblFotoTitle.Text = "Foto Nasabah";
             // 
-            // lblNama
+            // picNasabah
             // 
-            this.lblNama.AutoSize = true;
-            this.lblNama.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblNama.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblNama.Location = new Point(220, 38);
-            this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new Size(102, 15);
-            this.lblNama.TabIndex = 3;
-            this.lblNama.Text = "👤 Nama Lengkap";
+            this.picNasabah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+            this.picNasabah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picNasabah.Location = new System.Drawing.Point(3, 20);
+            this.picNasabah.Name = "picNasabah";
+            this.picNasabah.Size = new System.Drawing.Size(100, 100);
+            this.picNasabah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNasabah.TabIndex = 2;
+            this.picNasabah.TabStop = false;
+            // 
+            // btnPilihFoto
+            // 
+            this.btnPilihFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            this.btnPilihFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPilihFoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(194)))));
+            this.btnPilihFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.btnPilihFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.btnPilihFoto.Location = new System.Drawing.Point(3, 126);
+            this.btnPilihFoto.Name = "btnPilihFoto";
+            this.btnPilihFoto.Size = new System.Drawing.Size(100, 26);
+            this.btnPilihFoto.TabIndex = 3;
+            this.btnPilihFoto.Text = "Pilih Foto";
+            this.btnPilihFoto.UseVisualStyleBackColor = false;
+            this.btnPilihFoto.Click += new System.EventHandler(this.btnPilihFoto_Click);
+            // 
+            // panelInputsCol
+            // 
+            this.panelInputsCol.Controls.Add(this.txtAlamat);
+            this.panelInputsCol.Controls.Add(this.lblAlamatTitle);
+            this.panelInputsCol.Controls.Add(this.txtNoHp);
+            this.panelInputsCol.Controls.Add(this.lblNoHpTitle);
+            this.panelInputsCol.Controls.Add(this.txtNama);
+            this.panelInputsCol.Controls.Add(this.lblNamaTitle);
+            this.panelInputsCol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelInputsCol.Location = new System.Drawing.Point(130, 0);
+            this.panelInputsCol.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panelInputsCol.Name = "panelInputsCol";
+            this.panelInputsCol.Size = new System.Drawing.Size(696, 170);
+            this.panelInputsCol.TabIndex = 1;
+            // 
+            // lblNamaTitle
+            // 
+            this.lblNamaTitle.AutoSize = true;
+            this.lblNamaTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblNamaTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblNamaTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblNamaTitle.Name = "lblNamaTitle";
+            this.lblNamaTitle.Size = new System.Drawing.Size(89, 15);
+            this.lblNamaTitle.TabIndex = 0;
+            this.lblNamaTitle.Text = "Nama Lengkap";
             // 
             // txtNama
             // 
-            this.txtNama.Font = new Font("Segoe UI", 10F);
-            this.txtNama.Location = new Point(220, 56);
+            this.txtNama.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNama.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.txtNama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNama.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.txtNama.Location = new System.Drawing.Point(0, 18);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new Size(280, 25);
-            this.txtNama.TabIndex = 4;
+            this.txtNama.Size = new System.Drawing.Size(696, 24);
+            this.txtNama.TabIndex = 2;
             // 
-            // lblNoHp
+            // lblNoHpTitle
             // 
-            this.lblNoHp.AutoSize = true;
-            this.lblNoHp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblNoHp.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblNoHp.Location = new Point(520, 38);
-            this.lblNoHp.Name = "lblNoHp";
-            this.lblNoHp.Size = new Size(111, 15);
-            this.lblNoHp.TabIndex = 7;
-            this.lblNoHp.Text = "📞 No. Telepon/HP";
+            this.lblNoHpTitle.AutoSize = true;
+            this.lblNoHpTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblNoHpTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblNoHpTitle.Location = new System.Drawing.Point(0, 48);
+            this.lblNoHpTitle.Name = "lblNoHpTitle";
+            this.lblNoHpTitle.Size = new System.Drawing.Size(45, 15);
+            this.lblNoHpTitle.TabIndex = 3;
+            this.lblNoHpTitle.Text = "No. HP";
             // 
             // txtNoHp
             // 
-            this.txtNoHp.Font = new Font("Segoe UI", 10F);
-            this.txtNoHp.Location = new Point(520, 56);
+            this.txtNoHp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNoHp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.txtNoHp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNoHp.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtNoHp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.txtNoHp.Location = new System.Drawing.Point(0, 66);
             this.txtNoHp.Name = "txtNoHp";
-            this.txtNoHp.Size = new Size(220, 25);
-            this.txtNoHp.TabIndex = 8;
+            this.txtNoHp.Size = new System.Drawing.Size(696, 24);
+            this.txtNoHp.TabIndex = 5;
             // 
-            // lblAlamat
+            // lblAlamatTitle
             // 
-            this.lblAlamat.AutoSize = true;
-            this.lblAlamat.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblAlamat.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblAlamat.Location = new Point(20, 88);
-            this.lblAlamat.Name = "lblAlamat";
-            this.lblAlamat.Size = new Size(62, 15);
-            this.lblAlamat.TabIndex = 5;
-            this.lblAlamat.Text = "🏠 Alamat";
+            this.lblAlamatTitle.AutoSize = true;
+            this.lblAlamatTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblAlamatTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblAlamatTitle.Location = new System.Drawing.Point(0, 96);
+            this.lblAlamatTitle.Name = "lblAlamatTitle";
+            this.lblAlamatTitle.Size = new System.Drawing.Size(46, 15);
+            this.lblAlamatTitle.TabIndex = 6;
+            this.lblAlamatTitle.Text = "Alamat";
             // 
             // txtAlamat
             // 
-            this.txtAlamat.Font = new Font("Segoe UI", 10F);
-            this.txtAlamat.Location = new Point(20, 106);
+            this.txtAlamat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAlamat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.txtAlamat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAlamat.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtAlamat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.txtAlamat.Location = new System.Drawing.Point(0, 114);
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
-            this.txtAlamat.Size = new Size(480, 65);
-            this.txtAlamat.TabIndex = 6;
+            this.txtAlamat.Size = new System.Drawing.Size(696, 46);
+            this.txtAlamat.TabIndex = 8;
             // 
             // panelButtons
             // 
-            this.panelButtons.ColumnCount = 2;
-            this.panelButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.panelButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            this.panelButtons.Controls.Add(this.btnSimpan, 0, 0);
-            this.panelButtons.Controls.Add(this.btnUbah, 1, 0);
-            this.panelButtons.Controls.Add(this.btnHapus, 0, 1);
-            this.panelButtons.Controls.Add(this.btnBatal, 1, 1);
-            this.panelButtons.Location = new Point(520, 95);
+            this.panelButtons.Controls.Add(this.btnSimpan);
+            this.panelButtons.Controls.Add(this.btnUbah);
+            this.panelButtons.Controls.Add(this.btnHapus);
+            this.panelButtons.Controls.Add(this.btnBatal);
+            this.panelButtons.Controls.Add(this.btnRiwayat);
+            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelButtons.Location = new System.Drawing.Point(16, 192);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.RowCount = 2;
-            this.panelButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            this.panelButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            this.panelButtons.Size = new Size(360, 76);
-            this.panelButtons.TabIndex = 9;
+            this.panelButtons.Size = new System.Drawing.Size(826, 36);
+            this.panelButtons.TabIndex = 1;
             // 
             // btnSimpan
             // 
-            this.btnSimpan.BackColor = Color.FromArgb(16, 185, 129);
-            this.btnSimpan.Cursor = Cursors.Hand;
-            this.btnSimpan.Dock = DockStyle.Fill;
+            this.btnSimpan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(122)))), ((int)(((byte)(94)))));
+            this.btnSimpan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSimpan.FlatAppearance.BorderSize = 0;
-            this.btnSimpan.FlatStyle = FlatStyle.Flat;
-            this.btnSimpan.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.btnSimpan.ForeColor = Color.White;
-            this.btnSimpan.Location = new Point(2, 2);
+            this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSimpan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSimpan.ForeColor = System.Drawing.Color.White;
+            this.btnSimpan.Location = new System.Drawing.Point(0, 0);
+            this.btnSimpan.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new Size(176, 34);
+            this.btnSimpan.Size = new System.Drawing.Size(90, 32);
             this.btnSimpan.TabIndex = 0;
-            this.btnSimpan.Text = "💾 SIMPAN";
+            this.btnSimpan.Text = "Tambah";
             this.btnSimpan.UseVisualStyleBackColor = false;
-            this.btnSimpan.Click += new EventHandler(this.btnSimpan_Click);
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // btnUbah
             // 
-            this.btnUbah.BackColor = Color.FromArgb(37, 99, 235);
-            this.btnUbah.Cursor = Cursors.Hand;
-            this.btnUbah.Dock = DockStyle.Fill;
+            this.btnUbah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(151)))), ((int)(((byte)(31)))));
+            this.btnUbah.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUbah.FlatAppearance.BorderSize = 0;
-            this.btnUbah.FlatStyle = FlatStyle.Flat;
-            this.btnUbah.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.btnUbah.ForeColor = Color.White;
-            this.btnUbah.Location = new Point(182, 2);
+            this.btnUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUbah.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnUbah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(26)))), ((int)(((byte)(2)))));
+            this.btnUbah.Location = new System.Drawing.Point(98, 0);
+            this.btnUbah.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new Size(176, 34);
+            this.btnUbah.Size = new System.Drawing.Size(90, 32);
             this.btnUbah.TabIndex = 1;
-            this.btnUbah.Text = "✏️ UBAH";
+            this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = false;
-            this.btnUbah.Click += new EventHandler(this.btnUbah_Click);
+            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
             // 
             // btnHapus
             // 
-            this.btnHapus.BackColor = Color.FromArgb(225, 29, 72);
-            this.btnHapus.Cursor = Cursors.Hand;
-            this.btnHapus.Dock = DockStyle.Fill;
+            this.btnHapus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(223)))), ((int)(((byte)(217)))));
+            this.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHapus.FlatAppearance.BorderSize = 0;
-            this.btnHapus.FlatStyle = FlatStyle.Flat;
-            this.btnHapus.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.btnHapus.ForeColor = Color.White;
-            this.btnHapus.Location = new Point(2, 40);
+            this.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHapus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnHapus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(70)))), ((int)(((byte)(50)))));
+            this.btnHapus.Location = new System.Drawing.Point(196, 0);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new Size(176, 34);
+            this.btnHapus.Size = new System.Drawing.Size(90, 32);
             this.btnHapus.TabIndex = 2;
-            this.btnHapus.Text = "🗑️ HAPUS";
+            this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
-            this.btnHapus.Click += new EventHandler(this.btnHapus_Click);
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnBatal
             // 
-            this.btnBatal.BackColor = Color.FromArgb(100, 116, 139);
-            this.btnBatal.Cursor = Cursors.Hand;
-            this.btnBatal.Dock = DockStyle.Fill;
-            this.btnBatal.FlatAppearance.BorderSize = 0;
-            this.btnBatal.FlatStyle = FlatStyle.Flat;
-            this.btnBatal.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.btnBatal.ForeColor = Color.White;
-            this.btnBatal.Location = new Point(182, 40);
+            this.btnBatal.BackColor = System.Drawing.Color.Transparent;
+            this.btnBatal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBatal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(194)))));
+            this.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBatal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBatal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.btnBatal.Location = new System.Drawing.Point(294, 0);
+            this.btnBatal.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btnBatal.Name = "btnBatal";
-            this.btnBatal.Size = new Size(176, 34);
+            this.btnBatal.Size = new System.Drawing.Size(120, 32);
             this.btnBatal.TabIndex = 3;
-            this.btnBatal.Text = "🔄 BATAL";
+            this.btnBatal.Text = "Bersihkan Form";
             this.btnBatal.UseVisualStyleBackColor = false;
-            this.btnBatal.Click += new EventHandler(this.btnBatal_Click);
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
+            // 
+            // btnRiwayat
+            // 
+            this.btnRiwayat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
+            this.btnRiwayat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRiwayat.FlatAppearance.BorderSize = 0;
+            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRiwayat.ForeColor = System.Drawing.Color.White;
+            this.btnRiwayat.Location = new System.Drawing.Point(422, 0);
+            this.btnRiwayat.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(155, 32);
+            this.btnRiwayat.TabIndex = 4;
+            this.btnRiwayat.Text = "📜 Riwayat Transaksi";
+            this.btnRiwayat.UseVisualStyleBackColor = false;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
+            // 
+            // panelSearch
+            // 
+            this.panelSearch.Controls.Add(this.txtCari);
+            this.panelSearch.Controls.Add(this.lblCariTitle);
+            this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSearch.Location = new System.Drawing.Point(20, 316);
+            this.panelSearch.Name = "panelSearch";
+            this.panelSearch.Padding = new System.Windows.Forms.Padding(0, 10, 0, 8);
+            this.panelSearch.Size = new System.Drawing.Size(860, 64);
+            this.panelSearch.TabIndex = 2;
+            // 
+            // lblCariTitle
+            // 
+            this.lblCariTitle.AutoSize = true;
+            this.lblCariTitle.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
+            this.lblCariTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.lblCariTitle.Location = new System.Drawing.Point(1, 8);
+            this.lblCariTitle.Name = "lblCariTitle";
+            this.lblCariTitle.Size = new System.Drawing.Size(155, 15);
+            this.lblCariTitle.TabIndex = 0;
+            this.lblCariTitle.Text = "Cari Nasabah (Nama / HP)";
+            // 
+            // txtCari
+            // 
+            this.txtCari.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(250)))));
+            this.txtCari.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCari.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtCari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.txtCari.Location = new System.Drawing.Point(0, 28);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(320, 24);
+            this.txtCari.TabIndex = 2;
+            this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
             // panelGridCard
             // 
-            this.panelGridCard.BackColor = Color.White;
+            this.panelGridCard.BackColor = System.Drawing.Color.White;
+            this.panelGridCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGridCard.Controls.Add(this.dgvNasabah);
-            this.panelGridCard.Controls.Add(this.panelSearchBox);
-            this.panelGridCard.Dock = DockStyle.Fill;
-            this.panelGridCard.Location = new Point(20, 220);
-            this.panelGridCard.Margin = new Padding(0);
+            this.panelGridCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGridCard.Location = new System.Drawing.Point(20, 380);
             this.panelGridCard.Name = "panelGridCard";
-            this.panelGridCard.Padding = new Padding(15);
-            this.panelGridCard.Size = new Size(920, 415);
-            this.panelGridCard.TabIndex = 1;
+            this.panelGridCard.Padding = new System.Windows.Forms.Padding(1);
+            this.panelGridCard.Size = new System.Drawing.Size(860, 250);
+            this.panelGridCard.TabIndex = 3;
             // 
             // dgvNasabah
             // 
             this.dgvNasabah.AllowUserToAddRows = false;
             this.dgvNasabah.AllowUserToDeleteRows = false;
-            this.dgvNasabah.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNasabah.BackgroundColor = Color.White;
-            this.dgvNasabah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNasabah.Dock = DockStyle.Fill;
-            this.dgvNasabah.Location = new Point(15, 60);
-            this.dgvNasabah.MultiSelect = false;
+            this.dgvNasabah.BackgroundColor = System.Drawing.Color.White;
+            this.dgvNasabah.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvNasabah.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNasabah.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNasabah.Location = new System.Drawing.Point(1, 1);
             this.dgvNasabah.Name = "dgvNasabah";
             this.dgvNasabah.ReadOnly = true;
-            this.dgvNasabah.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNasabah.Size = new Size(890, 340);
-            this.dgvNasabah.TabIndex = 1;
-            this.dgvNasabah.CellClick += new DataGridViewCellEventHandler(this.dgvNasabah_CellClick);
-            // 
-            // panelSearchBox
-            // 
-            this.panelSearchBox.BackColor = Color.FromArgb(240, 244, 242);
-            this.panelSearchBox.Controls.Add(this.lblRecordBadge);
-            this.panelSearchBox.Controls.Add(this.txtCari);
-            this.panelSearchBox.Controls.Add(this.lblCariIcon);
-            this.panelSearchBox.Dock = DockStyle.Top;
-            this.panelSearchBox.Location = new Point(15, 15);
-            this.panelSearchBox.Name = "panelSearchBox";
-            this.panelSearchBox.Padding = new Padding(10, 8, 10, 8);
-            this.panelSearchBox.Size = new Size(890, 45);
-            this.panelSearchBox.TabIndex = 0;
-            // 
-            // lblRecordBadge
-            // 
-            this.lblRecordBadge.Dock = DockStyle.Right;
-            this.lblRecordBadge.AutoSize = true;
-            this.lblRecordBadge.BackColor = Color.FromArgb(16, 185, 129);
-            this.lblRecordBadge.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            this.lblRecordBadge.ForeColor = Color.White;
-            this.lblRecordBadge.Location = new Point(730, 8);
-            this.lblRecordBadge.Padding = new Padding(8, 4, 8, 4);
-            this.lblRecordBadge.Name = "lblRecordBadge";
-            this.lblRecordBadge.Size = new Size(150, 23);
-            this.lblRecordBadge.TabIndex = 2;
-            this.lblRecordBadge.Text = "📌 TOTAL: 0 NASABAH";
-            // 
-            // txtCari
-            // 
-            this.txtCari.BackColor = Color.FromArgb(240, 244, 242);
-            this.txtCari.BorderStyle = BorderStyle.None;
-            this.txtCari.Dock = DockStyle.Fill;
-            this.txtCari.Font = new Font("Segoe UI", 10.5F);
-            this.txtCari.Location = new Point(125, 8);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new Size(605, 19);
-            this.txtCari.TabIndex = 1;
-            this.txtCari.TextChanged += new EventHandler(this.txtCari_TextChanged);
-            // 
-            // lblCariIcon
-            // 
-            this.lblCariIcon.AutoSize = true;
-            this.lblCariIcon.Dock = DockStyle.Left;
-            this.lblCariIcon.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            this.lblCariIcon.ForeColor = Color.FromArgb(15, 23, 42);
-            this.lblCariIcon.Location = new Point(10, 8);
-            this.lblCariIcon.Name = "lblCariIcon";
-            this.lblCariIcon.Size = new Size(115, 17);
-            this.lblCariIcon.TabIndex = 0;
-            this.lblCariIcon.Text = "🔍 Cari Nasabah: ";
+            this.dgvNasabah.Size = new System.Drawing.Size(856, 246);
+            this.dgvNasabah.TabIndex = 0;
+            this.dgvNasabah.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNasabah_CellClick);
             // 
             // FormNasabah
             // 
-            this.AutoScaleDimensions = new SizeF(6F, 13F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(240, 244, 242);
-            this.ClientSize = new Size(960, 655);
-            this.Controls.Add(this.panelMainContainer);
-            this.FormBorderStyle = FormBorderStyle.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(236)))));
+            this.ClientSize = new System.Drawing.Size(900, 650);
+            this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNasabah";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Master Data Nasabah";
-            this.Load += new EventHandler(this.FormNasabah_Load);
-            this.panelMainContainer.ResumeLayout(false);
-            this.panelFormCard.ResumeLayout(false);
-            this.panelFormCard.PerformLayout();
-            this.panelButtons.ResumeLayout(false);
+            this.Text = "Data Nasabah";
+            this.Load += new System.EventHandler(this.FormNasabah_Load);
+            this.panelMain.ResumeLayout(false);
             this.panelGridCard.ResumeLayout(false);
-            this.panelSearchBox.ResumeLayout(false);
-            this.panelSearchBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNasabah)).EndInit();
+            this.panelSearch.ResumeLayout(false);
+            this.panelSearch.PerformLayout();
+            this.panelFormCard.ResumeLayout(false);
+            this.panelButtons.ResumeLayout(false);
+            this.tableLayoutPanelFields.ResumeLayout(false);
+            this.panelPhotoCol.ResumeLayout(false);
+            this.panelPhotoCol.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picNasabah)).EndInit();
+            this.panelInputsCol.ResumeLayout(false);
+            this.panelInputsCol.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel panelMainContainer;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Panel panelFormCard;
-        private System.Windows.Forms.Label lblFormHeader;
-        private System.Windows.Forms.Label lblKode;
-        private System.Windows.Forms.TextBox txtKode;
-        private System.Windows.Forms.Label lblNama;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFields;
+        private System.Windows.Forms.Panel panelPhotoCol;
+        private System.Windows.Forms.Label lblFotoTitle;
+        private System.Windows.Forms.PictureBox picNasabah;
+        private System.Windows.Forms.Button btnPilihFoto;
+        private System.Windows.Forms.Panel panelInputsCol;
+        private System.Windows.Forms.Label lblNamaTitle;
         private System.Windows.Forms.TextBox txtNama;
-        private System.Windows.Forms.Label lblAlamat;
-        private System.Windows.Forms.TextBox txtAlamat;
-        private System.Windows.Forms.Label lblNoHp;
+        private System.Windows.Forms.Label lblNoHpTitle;
         private System.Windows.Forms.TextBox txtNoHp;
-        private System.Windows.Forms.TableLayoutPanel panelButtons;
+        private System.Windows.Forms.Label lblAlamatTitle;
+        private System.Windows.Forms.TextBox txtAlamat;
+        private System.Windows.Forms.FlowLayoutPanel panelButtons;
         private System.Windows.Forms.Button btnSimpan;
         private System.Windows.Forms.Button btnUbah;
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnBatal;
-        private System.Windows.Forms.Panel panelGridCard;
-        private System.Windows.Forms.Panel panelSearchBox;
-        private System.Windows.Forms.Label lblCariIcon;
+        private System.Windows.Forms.Button btnRiwayat;
+        private System.Windows.Forms.Panel panelSearch;
+        private System.Windows.Forms.Label lblCariTitle;
         private System.Windows.Forms.TextBox txtCari;
-        private System.Windows.Forms.Label lblRecordBadge;
+        private System.Windows.Forms.Panel panelGridCard;
         private System.Windows.Forms.DataGridView dgvNasabah;
     }
 }
