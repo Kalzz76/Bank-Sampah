@@ -49,13 +49,6 @@ namespace BankSampah
 
             LoadDashboardData();
             LoadBannerImage();
-
-            // Start Embedded Web Server for Portal Warga Mobile-First
-            try
-            {
-                WargaWebServer.Start();
-            }
-            catch { }
         }
 
         private void LoadBannerImage()
