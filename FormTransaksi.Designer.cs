@@ -31,6 +31,7 @@ namespace BankSampah
             this.lblAudioInfo = new System.Windows.Forms.Label();
             this.btnPlaySaveAudio = new System.Windows.Forms.Button();
             this.panelCalcBox = new System.Windows.Forms.Panel();
+            this.btnBersihkan = new System.Windows.Forms.Button();
             this.btnSimpanTrx = new System.Windows.Forms.Button();
             this.btnCetakStruk = new System.Windows.Forms.Button();
             this.lblNilaiSetoranVal = new System.Windows.Forms.Label();
@@ -291,8 +292,9 @@ namespace BankSampah
             // 
             this.panelCalcBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.panelCalcBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCalcBox.Controls.Add(this.btnSimpanTrx);
+            this.panelCalcBox.Controls.Add(this.btnBersihkan);
             this.panelCalcBox.Controls.Add(this.btnCetakStruk);
+            this.panelCalcBox.Controls.Add(this.btnSimpanTrx);
             this.panelCalcBox.Controls.Add(this.lblNilaiSetoranVal);
             this.panelCalcBox.Controls.Add(this.lblNilaiSetoranTitle);
             this.panelCalcBox.Dock = System.Windows.Forms.DockStyle.Top;
@@ -325,6 +327,23 @@ namespace BankSampah
             this.lblNilaiSetoranVal.TabIndex = 1;
             this.lblNilaiSetoranVal.Text = "Rp 15.750";
             // 
+            // btnBersihkan
+            // 
+            this.btnBersihkan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBersihkan.BackColor = System.Drawing.Color.Transparent;
+            this.btnBersihkan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBersihkan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(194)))));
+            this.btnBersihkan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBersihkan.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnBersihkan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
+            this.btnBersihkan.Location = new System.Drawing.Point(360, 10);
+            this.btnBersihkan.Name = "btnBersihkan";
+            this.btnBersihkan.Size = new System.Drawing.Size(140, 34);
+            this.btnBersihkan.TabIndex = 4;
+            this.btnBersihkan.Text = "🧹 Bersihkan Form";
+            this.btnBersihkan.UseVisualStyleBackColor = false;
+            this.btnBersihkan.Click += new System.EventHandler(this.btnBersihkan_Click);
+            // 
             // btnCetakStruk
             // 
             this.btnCetakStruk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -336,7 +355,7 @@ namespace BankSampah
             this.btnCetakStruk.ForeColor = System.Drawing.Color.White;
             this.btnCetakStruk.Location = new System.Drawing.Point(510, 10);
             this.btnCetakStruk.Name = "btnCetakStruk";
-            this.btnCetakStruk.Size = new System.Drawing.Size(150, 34);
+            this.btnCetakStruk.Size = new System.Drawing.Size(148, 34);
             this.btnCetakStruk.TabIndex = 3;
             this.btnCetakStruk.Text = "🧾 Cetak Struk Bukti";
             this.btnCetakStruk.UseVisualStyleBackColor = false;
@@ -351,9 +370,9 @@ namespace BankSampah
             this.btnSimpanTrx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSimpanTrx.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnSimpanTrx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(26)))), ((int)(((byte)(2)))));
-            this.btnSimpanTrx.Location = new System.Drawing.Point(670, 10);
+            this.btnSimpanTrx.Location = new System.Drawing.Point(668, 10);
             this.btnSimpanTrx.Name = "btnSimpanTrx";
-            this.btnSimpanTrx.Size = new System.Drawing.Size(142, 34);
+            this.btnSimpanTrx.Size = new System.Drawing.Size(144, 34);
             this.btnSimpanTrx.TabIndex = 2;
             this.btnSimpanTrx.Text = "Simpan Transaksi";
             this.btnSimpanTrx.UseVisualStyleBackColor = false;
@@ -508,6 +527,7 @@ namespace BankSampah
         private System.Windows.Forms.Panel panelCalcBox;
         private System.Windows.Forms.Label lblNilaiSetoranTitle;
         private System.Windows.Forms.Label lblNilaiSetoranVal;
+        private System.Windows.Forms.Button btnBersihkan;
         private System.Windows.Forms.Button btnSimpanTrx;
         private System.Windows.Forms.Button btnCetakStruk;
         private System.Windows.Forms.Panel panelAudioBox;

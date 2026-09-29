@@ -33,6 +33,7 @@ namespace BankSampah
             UIHelper.ApplyModernGridStyle(dgvTransaksi);
             UIHelper.StyleButtonGold(btnSimpanTrx);
             UIHelper.StyleButtonDark(btnCetakStruk);
+            UIHelper.StyleButtonOutline(btnBersihkan);
 
             UIHelper.MakeRounded(panelFormCard, 10);
             UIHelper.MakeRounded(panelGridCard, 10);
@@ -41,6 +42,7 @@ namespace BankSampah
             UIHelper.MakeRounded(btnPlaySaveAudio, 14);
             UIHelper.MakeRounded(btnSimpanTrx, 6);
             UIHelper.MakeRounded(btnCetakStruk, 6);
+            UIHelper.MakeRounded(btnBersihkan, 6);
             UIHelper.MakeRounded(cmbNasabah, 6);
             UIHelper.MakeRounded(cmbSampah, 6);
             UIHelper.MakeRounded(txtBerat, 6);
@@ -302,6 +304,47 @@ namespace BankSampah
                     }
                 }
             }
+            else
+            {
+                hargaPerKgCurrent = 0;
+                if (!isPopulatingRow)
+                {
+                    UpdateCalculations();
+                }
+            }
+        }
+
+        private void btnBersihkan_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+            txtBerat.Focus();
+        }
+
+        private void ResetForm()
+        {
+            isPopulatingRow = true;
+            try
+            {
+                dgvTransaksi.ClearSelection();
+                if (cmbNasabah.Items.Count > 0) cmbNasabah.SelectedIndex = -1;
+                if (cmbSampah.Items.Count > 0) cmbSampah.SelectedIndex = -1;
+                txtBerat.Clear();
+                dtpTanggal.Value = DateTime.Today;
+                hargaPerKgCurrent = 0;
+                totalCurrent = 0;
+                lblNilaiSetoranVal.Text = "Rp 0";
+                printKodeTrx = "";
+                printTgl = "";
+                printNasabah = "";
+                printSampah = "";
+                printBerat = "";
+                printHargaKg = "";
+                printTotal = "";
+            }
+            finally
+            {
+                isPopulatingRow = false;
+            }
         }
 
         private void txtBerat_TextChanged(object sender, EventArgs e)
@@ -322,14 +365,14 @@ namespace BankSampah
 
         private void btnSimpanTrx_Click(object sender, EventArgs e)
         {
-            if (cmbNasabah.SelectedItem == null)
+            if (cmbNasabah.SelectedItem == null || cmbNasabah.SelectedIndex < 0)
             {
                 SoundHelper.PlayAlertSound();
                 MessageBox.Show("Pilih Nasabah terlebih dahulu!", "Validasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (cmbSampah.SelectedItem == null)
+            if (cmbSampah.SelectedItem == null || cmbSampah.SelectedIndex < 0)
             {
                 SoundHelper.PlayAlertSound();
                 MessageBox.Show("Pilih Jenis Sampah terlebih dahulu!", "Validasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -341,6 +384,7 @@ namespace BankSampah
             {
                 SoundHelper.PlayAlertSound();
                 MessageBox.Show("Nilai berat harus berupa angka lebih besar dari 0!", "Validasi Transaksi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBerat.Focus();
                 return;
             }
 
@@ -368,8 +412,7 @@ namespace BankSampah
 
             LoadCombos();
             LoadData();
-            txtBerat.Text = "1";
-            UpdateCalculations();
+            ResetForm();
         }
 
         private void btnCetakStruk_Click(object sender, EventArgs e)
