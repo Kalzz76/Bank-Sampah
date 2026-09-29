@@ -29,6 +29,7 @@ namespace BankSampah
             UIHelper.MakeRounded(panelFormCard, 10);
             UIHelper.MakeRounded(panelGridCard, 10);
             UIHelper.MakeRounded(btnPilihFoto, 6);
+            UIHelper.MakeRounded(btnHapusFoto, 6);
             UIHelper.MakeRounded(txtNama, 6);
             UIHelper.MakeRounded(cmbKategori, 6);
             UIHelper.MakeRounded(txtHarga, 6);
@@ -146,6 +147,35 @@ namespace BankSampah
                     {
                         MessageBox.Show("Gagal memuat foto: " + ex.Message, "Error Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+        }
+
+        private void btnHapusFoto_Click(object sender, EventArgs e)
+        {
+            if (currentFotoFile == "default_sampah.png" || string.IsNullOrWhiteSpace(currentFotoFile))
+            {
+                MessageBox.Show("Foto sudah menggunakan inisial bawaan.", "Info Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show("Hapus foto jenis sampah dan gunakan avatar inisial?", "Konfirmasi Hapus Foto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                currentFotoFile = "default_sampah.png";
+                UpdatePreviewAvatar();
+
+                if (selectedId > 0)
+                {
+                    decimal harga = 0;
+                    string hargaStr = txtHarga.Text.Replace(".", "").Replace(",", ".");
+                    decimal.TryParse(hargaStr, NumberStyles.Any, CultureInfo.InvariantCulture, out harga);
+                    string kategori = cmbKategori.SelectedItem != null ? cmbKategori.SelectedItem.ToString() : "Plastik";
+                    string jenis = DetermineKelasSampah(kategori);
+
+                    DataStore.UpdateSampah(selectedId, txtNama.Text.Trim(), jenis, kategori, harga, currentFotoFile);
+                    LoadData();
+                    SoundHelper.PlaySaveSound();
+                    MessageBox.Show("Foto jenis sampah berhasil dihapus dan diganti dengan inisial!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

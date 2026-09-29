@@ -33,6 +33,7 @@ namespace BankSampah
             this.lblTipsSOP = new System.Windows.Forms.Label();
             this.tableLayoutPanelFields = new System.Windows.Forms.TableLayoutPanel();
             this.panelPhotoCol = new System.Windows.Forms.Panel();
+            this.btnHapusFoto = new System.Windows.Forms.Button();
             this.btnPilihFoto = new System.Windows.Forms.Button();
             this.picSampah = new System.Windows.Forms.PictureBox();
             this.lblFotoTitle = new System.Windows.Forms.Label();
@@ -141,6 +142,7 @@ namespace BankSampah
             // 
             // panelPhotoCol
             // 
+            this.panelPhotoCol.Controls.Add(this.btnHapusFoto);
             this.panelPhotoCol.Controls.Add(this.btnPilihFoto);
             this.panelPhotoCol.Controls.Add(this.picSampah);
             this.panelPhotoCol.Controls.Add(this.lblFotoTitle);
@@ -166,9 +168,9 @@ namespace BankSampah
             // 
             this.picSampah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.picSampah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSampah.Location = new System.Drawing.Point(2, 20);
+            this.picSampah.Location = new System.Drawing.Point(6, 18);
             this.picSampah.Name = "picSampah";
-            this.picSampah.Size = new System.Drawing.Size(84, 84);
+            this.picSampah.Size = new System.Drawing.Size(76, 76);
             this.picSampah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picSampah.TabIndex = 2;
             this.picSampah.TabStop = false;
@@ -179,15 +181,31 @@ namespace BankSampah
             this.btnPilihFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPilihFoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(194)))));
             this.btnPilihFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 7.5F);
             this.btnPilihFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
-            this.btnPilihFoto.Location = new System.Drawing.Point(2, 110);
+            this.btnPilihFoto.Location = new System.Drawing.Point(0, 98);
             this.btnPilihFoto.Name = "btnPilihFoto";
-            this.btnPilihFoto.Size = new System.Drawing.Size(84, 26);
+            this.btnPilihFoto.Size = new System.Drawing.Size(88, 23);
             this.btnPilihFoto.TabIndex = 3;
-            this.btnPilihFoto.Text = "Pilih Foto";
+            this.btnPilihFoto.Text = "Pilih / Ganti";
             this.btnPilihFoto.UseVisualStyleBackColor = false;
             this.btnPilihFoto.Click += new System.EventHandler(this.btnPilihFoto_Click);
+            // 
+            // btnHapusFoto
+            // 
+            this.btnHapusFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnHapusFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHapusFoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.btnHapusFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHapusFoto.Font = new System.Drawing.Font("Segoe UI", 7.5F);
+            this.btnHapusFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnHapusFoto.Location = new System.Drawing.Point(0, 123);
+            this.btnHapusFoto.Name = "btnHapusFoto";
+            this.btnHapusFoto.Size = new System.Drawing.Size(88, 23);
+            this.btnHapusFoto.TabIndex = 4;
+            this.btnHapusFoto.Text = "Hapus Foto";
+            this.btnHapusFoto.UseVisualStyleBackColor = false;
+            this.btnHapusFoto.Click += new System.EventHandler(this.btnHapusFoto_Click);
             // 
             // panelInputsCol
             // 
@@ -496,6 +514,7 @@ namespace BankSampah
         private System.Windows.Forms.Label lblFotoTitle;
         private System.Windows.Forms.PictureBox picSampah;
         private System.Windows.Forms.Button btnPilihFoto;
+        private System.Windows.Forms.Button btnHapusFoto;
         private System.Windows.Forms.Panel panelInputsCol;
         private System.Windows.Forms.Panel panelField1;
         private System.Windows.Forms.Label lblNamaTitle;

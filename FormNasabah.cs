@@ -28,6 +28,7 @@ namespace BankSampah
             UIHelper.MakeRounded(panelFormCard, 10);
             UIHelper.MakeRounded(panelGridCard, 10);
             UIHelper.MakeRounded(btnPilihFoto, 6);
+            UIHelper.MakeRounded(btnHapusFoto, 6);
             UIHelper.MakeRounded(btnRiwayat, 6);
             UIHelper.MakeRounded(txtNama, 6);
             UIHelper.MakeRounded(txtNoHp, 6);
@@ -150,6 +151,30 @@ namespace BankSampah
                     {
                         MessageBox.Show("Gagal memuat foto: " + ex.Message, "Error Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+        }
+
+        private void btnHapusFoto_Click(object sender, EventArgs e)
+        {
+            if (currentFotoFile == "default_nasabah.png" || string.IsNullOrWhiteSpace(currentFotoFile))
+            {
+                MessageBox.Show("Foto sudah menggunakan inisial bawaan.", "Info Foto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show("Hapus foto profil nasabah dan gunakan avatar inisial?", "Konfirmasi Hapus Foto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                currentFotoFile = "default_nasabah.png";
+                UpdatePreviewAvatar();
+
+                if (selectedId > 0)
+                {
+                    string kode = "NSB-" + selectedId.ToString("D3");
+                    DataStore.UpdateNasabah(selectedId, kode, txtNama.Text.Trim(), txtAlamat.Text.Trim(), txtNoHp.Text.Trim(), currentFotoFile);
+                    LoadData();
+                    SoundHelper.PlaySaveSound();
+                    MessageBox.Show("Foto nasabah berhasil dihapus dan diganti dengan inisial!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

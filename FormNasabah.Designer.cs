@@ -28,14 +28,15 @@ namespace BankSampah
             this.txtCari = new System.Windows.Forms.TextBox();
             this.lblCariTitle = new System.Windows.Forms.Label();
             this.panelFormCard = new System.Windows.Forms.Panel();
+            this.tableLayoutPanelFields = new System.Windows.Forms.TableLayoutPanel();
             this.panelButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSimpan = new System.Windows.Forms.Button();
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
             this.btnBatal = new System.Windows.Forms.Button();
             this.btnRiwayat = new System.Windows.Forms.Button();
-            this.tableLayoutPanelFields = new System.Windows.Forms.TableLayoutPanel();
             this.panelPhotoCol = new System.Windows.Forms.Panel();
+            this.btnHapusFoto = new System.Windows.Forms.Button();
             this.btnPilihFoto = new System.Windows.Forms.Button();
             this.picNasabah = new System.Windows.Forms.PictureBox();
             this.lblFotoTitle = new System.Windows.Forms.Label();
@@ -138,6 +139,7 @@ namespace BankSampah
             // 
             // panelPhotoCol
             // 
+            this.panelPhotoCol.Controls.Add(this.btnHapusFoto);
             this.panelPhotoCol.Controls.Add(this.btnPilihFoto);
             this.panelPhotoCol.Controls.Add(this.picNasabah);
             this.panelPhotoCol.Controls.Add(this.lblFotoTitle);
@@ -163,9 +165,9 @@ namespace BankSampah
             // 
             this.picNasabah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.picNasabah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picNasabah.Location = new System.Drawing.Point(3, 20);
+            this.picNasabah.Location = new System.Drawing.Point(8, 18);
             this.picNasabah.Name = "picNasabah";
-            this.picNasabah.Size = new System.Drawing.Size(100, 100);
+            this.picNasabah.Size = new System.Drawing.Size(86, 86);
             this.picNasabah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNasabah.TabIndex = 2;
             this.picNasabah.TabStop = false;
@@ -178,13 +180,29 @@ namespace BankSampah
             this.btnPilihFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnPilihFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
-            this.btnPilihFoto.Location = new System.Drawing.Point(3, 126);
+            this.btnPilihFoto.Location = new System.Drawing.Point(3, 110);
             this.btnPilihFoto.Name = "btnPilihFoto";
-            this.btnPilihFoto.Size = new System.Drawing.Size(100, 26);
+            this.btnPilihFoto.Size = new System.Drawing.Size(96, 24);
             this.btnPilihFoto.TabIndex = 3;
-            this.btnPilihFoto.Text = "Pilih Foto";
+            this.btnPilihFoto.Text = "Pilih / Ganti";
             this.btnPilihFoto.UseVisualStyleBackColor = false;
             this.btnPilihFoto.Click += new System.EventHandler(this.btnPilihFoto_Click);
+            // 
+            // btnHapusFoto
+            // 
+            this.btnHapusFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnHapusFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHapusFoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.btnHapusFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHapusFoto.Font = new System.Drawing.Font("Segoe UI", 7.5F);
+            this.btnHapusFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnHapusFoto.Location = new System.Drawing.Point(3, 138);
+            this.btnHapusFoto.Name = "btnHapusFoto";
+            this.btnHapusFoto.Size = new System.Drawing.Size(96, 24);
+            this.btnHapusFoto.TabIndex = 4;
+            this.btnHapusFoto.Text = "Hapus Foto";
+            this.btnHapusFoto.UseVisualStyleBackColor = false;
+            this.btnHapusFoto.Click += new System.EventHandler(this.btnHapusFoto_Click);
             // 
             // panelInputsCol
             // 
@@ -475,6 +493,7 @@ namespace BankSampah
         private System.Windows.Forms.Label lblFotoTitle;
         private System.Windows.Forms.PictureBox picNasabah;
         private System.Windows.Forms.Button btnPilihFoto;
+        private System.Windows.Forms.Button btnHapusFoto;
         private System.Windows.Forms.Panel panelInputsCol;
         private System.Windows.Forms.Label lblNamaTitle;
         private System.Windows.Forms.TextBox txtNama;
