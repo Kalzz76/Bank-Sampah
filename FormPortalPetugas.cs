@@ -1118,8 +1118,81 @@ namespace BankSampah
                     txtBeratRealJemput.Text = Convert.ToDecimal(estB).ToString("N2", CultureInfo.InvariantCulture);
                 }
 
+                // Otomatis sinkronkan jenis sampah final sesuai pesanan antrean warga
+                if (row.Cells["estimasi_sampah"] != null && row.Cells["estimasi_sampah"].Value != null && row.Cells["estimasi_sampah"].Value != DBNull.Value)
+                {
+                    string estSampah = row.Cells["estimasi_sampah"].Value.ToString().Trim();
+                    SelectMatchingSampahArmada(estSampah);
+                    lblSampahArmada.Text = "Jenis Sampah Final (Sesuai Antrean) *";
+                }
+                else
+                {
+                    lblSampahArmada.Text = "Jenis Sampah Final *";
+                }
+
                 btnMulaiJalan.Enabled = (status == "Menunggu");
                 btnSelesaiDanCairkan.Enabled = (status != "Selesai");
+            }
+        }
+
+        private void SelectMatchingSampahArmada(string estSampah)
+        {
+            if (string.IsNullOrWhiteSpace(estSampah) || cboSampahArmada.Items.Count == 0) return;
+
+            string targetNama = estSampah.Trim();
+            int rpIdx = targetNama.IndexOf(" (Rp", StringComparison.OrdinalIgnoreCase);
+            if (rpIdx > 0)
+            {
+                targetNama = targetNama.Substring(0, rpIdx).Trim();
+            }
+
+            // 1. Exact match nama bersih atau teks lengkap
+            for (int i = 0; i < cboSampahArmada.Items.Count; i++)
+            {
+                SampahComboItem item = cboSampahArmada.Items[i] as SampahComboItem;
+                if (item != null)
+                {
+                    if (string.Equals(item.Nama.Trim(), targetNama, StringComparison.OrdinalIgnoreCase) ||
+                        string.Equals(item.Nama.Trim(), estSampah.Trim(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        cboSampahArmada.SelectedIndex = i;
+                        return;
+                    }
+                }
+            }
+
+            // 2. Contains match (targetNama mengandung nama item atau sebaliknya)
+            for (int i = 0; i < cboSampahArmada.Items.Count; i++)
+            {
+                SampahComboItem item = cboSampahArmada.Items[i] as SampahComboItem;
+                if (item != null)
+                {
+                    string itemNama = item.Nama.Trim();
+                    if (targetNama.IndexOf(itemNama, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        itemNama.IndexOf(targetNama, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        cboSampahArmada.SelectedIndex = i;
+                        return;
+                    }
+                }
+            }
+
+            // 3. Keyword matching per kata (misal: "Besi", "Plastik", "Kardus", "Minyak", "Kaca", "Logam")
+            string[] keywords = targetNama.Split(new char[] { ' ', '/', '&', '-', ',', '(', ')' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < cboSampahArmada.Items.Count; i++)
+            {
+                SampahComboItem item = cboSampahArmada.Items[i] as SampahComboItem;
+                if (item != null)
+                {
+                    foreach (string kw in keywords)
+                    {
+                        if (kw.Length >= 3 && item.Nama.IndexOf(kw, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            cboSampahArmada.SelectedIndex = i;
+                            return;
+                        }
+                    }
+                }
             }
         }
 
