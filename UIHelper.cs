@@ -293,9 +293,14 @@ namespace BankSampah
                 g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
 
                 string path = "";
-                if (!string.IsNullOrWhiteSpace(photoFileName) && photoFileName != "default_nasabah.png")
+                if (!string.IsNullOrWhiteSpace(photoFileName) && photoFileName != "default_nasabah.png" && photoFileName != "default_sampah.png")
                 {
                     path = System.IO.Path.Combine(Application.StartupPath, "Assets", "Images", photoFileName);
+                    if (!System.IO.File.Exists(path))
+                    {
+                        string altPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "Images", photoFileName);
+                        if (System.IO.File.Exists(altPath)) path = altPath;
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(path) && System.IO.File.Exists(path))
@@ -345,9 +350,9 @@ namespace BankSampah
                 {
                     string[] parts = name.Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     if (parts.Length >= 2) initial = (parts[0][0].ToString() + parts[1][0].ToString()).ToUpper();
-                    else if (parts.Length == 1 && parts[0].Length > 0) initial = parts[0][0].ToString().ToUpper();
+                    else if (parts.Length == 1 && parts[0].Length > 0) initial = (parts[0].Length >= 2 ? parts[0].Substring(0, 2) : parts[0]).ToUpper();
                 }
-                if (string.IsNullOrEmpty(initial)) initial = "👤";
+                if (string.IsNullOrEmpty(initial)) initial = "?";
 
                 using (Font f = new Font("Segoe UI", size * 0.35f, FontStyle.Bold))
                 using (SolidBrush textBrush = new SolidBrush(Color.FromArgb(22, 38, 31)))
