@@ -165,9 +165,9 @@ namespace BankSampah
             // 
             this.picNasabah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.picNasabah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picNasabah.Location = new System.Drawing.Point(8, 18);
+            this.picNasabah.Location = new System.Drawing.Point(18, 18);
             this.picNasabah.Name = "picNasabah";
-            this.picNasabah.Size = new System.Drawing.Size(86, 86);
+            this.picNasabah.Size = new System.Drawing.Size(84, 84);
             this.picNasabah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNasabah.TabIndex = 2;
             this.picNasabah.TabStop = false;
@@ -180,9 +180,9 @@ namespace BankSampah
             this.btnPilihFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnPilihFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
-            this.btnPilihFoto.Location = new System.Drawing.Point(3, 110);
+            this.btnPilihFoto.Location = new System.Drawing.Point(10, 108);
             this.btnPilihFoto.Name = "btnPilihFoto";
-            this.btnPilihFoto.Size = new System.Drawing.Size(96, 24);
+            this.btnPilihFoto.Size = new System.Drawing.Size(100, 26);
             this.btnPilihFoto.TabIndex = 3;
             this.btnPilihFoto.Text = "Pilih / Ganti";
             this.btnPilihFoto.UseVisualStyleBackColor = false;
@@ -196,9 +196,9 @@ namespace BankSampah
             this.btnHapusFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHapusFoto.Font = new System.Drawing.Font("Segoe UI", 7.5F);
             this.btnHapusFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnHapusFoto.Location = new System.Drawing.Point(3, 138);
+            this.btnHapusFoto.Location = new System.Drawing.Point(10, 138);
             this.btnHapusFoto.Name = "btnHapusFoto";
-            this.btnHapusFoto.Size = new System.Drawing.Size(96, 24);
+            this.btnHapusFoto.Size = new System.Drawing.Size(100, 26);
             this.btnHapusFoto.TabIndex = 4;
             this.btnHapusFoto.Text = "Hapus Foto";
             this.btnHapusFoto.UseVisualStyleBackColor = false;

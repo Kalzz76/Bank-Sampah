@@ -122,13 +122,13 @@ namespace BankSampah
             this.panelFormCard.Location = new System.Drawing.Point(20, 70);
             this.panelFormCard.Name = "panelFormCard";
             this.panelFormCard.Padding = new System.Windows.Forms.Padding(16);
-            this.panelFormCard.Size = new System.Drawing.Size(860, 220);
+            this.panelFormCard.Size = new System.Drawing.Size(860, 246);
             this.panelFormCard.TabIndex = 1;
             // 
             // tableLayoutPanelFields
             // 
             this.tableLayoutPanelFields.ColumnCount = 2;
-            this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanelFields.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelFields.Controls.Add(this.panelPhotoCol, 0, 0);
             this.tableLayoutPanelFields.Controls.Add(this.panelInputsCol, 1, 0);
@@ -137,7 +137,7 @@ namespace BankSampah
             this.tableLayoutPanelFields.Name = "tableLayoutPanelFields";
             this.tableLayoutPanelFields.RowCount = 1;
             this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFields.Size = new System.Drawing.Size(826, 146);
+            this.tableLayoutPanelFields.Size = new System.Drawing.Size(826, 172);
             this.tableLayoutPanelFields.TabIndex = 0;
             // 
             // panelPhotoCol
@@ -150,7 +150,7 @@ namespace BankSampah
             this.panelPhotoCol.Location = new System.Drawing.Point(0, 0);
             this.panelPhotoCol.Margin = new System.Windows.Forms.Padding(0);
             this.panelPhotoCol.Name = "panelPhotoCol";
-            this.panelPhotoCol.Size = new System.Drawing.Size(110, 146);
+            this.panelPhotoCol.Size = new System.Drawing.Size(120, 172);
             this.panelPhotoCol.TabIndex = 0;
             // 
             // lblFotoTitle
@@ -168,9 +168,9 @@ namespace BankSampah
             // 
             this.picSampah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.picSampah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSampah.Location = new System.Drawing.Point(6, 18);
+            this.picSampah.Location = new System.Drawing.Point(18, 18);
             this.picSampah.Name = "picSampah";
-            this.picSampah.Size = new System.Drawing.Size(76, 76);
+            this.picSampah.Size = new System.Drawing.Size(80, 80);
             this.picSampah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picSampah.TabIndex = 2;
             this.picSampah.TabStop = false;
@@ -181,11 +181,11 @@ namespace BankSampah
             this.btnPilihFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPilihFoto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(210)))), ((int)(((byte)(194)))));
             this.btnPilihFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 7.5F);
+            this.btnPilihFoto.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnPilihFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
-            this.btnPilihFoto.Location = new System.Drawing.Point(0, 98);
+            this.btnPilihFoto.Location = new System.Drawing.Point(8, 105);
             this.btnPilihFoto.Name = "btnPilihFoto";
-            this.btnPilihFoto.Size = new System.Drawing.Size(88, 23);
+            this.btnPilihFoto.Size = new System.Drawing.Size(100, 26);
             this.btnPilihFoto.TabIndex = 3;
             this.btnPilihFoto.Text = "Pilih / Ganti";
             this.btnPilihFoto.UseVisualStyleBackColor = false;
@@ -199,9 +199,9 @@ namespace BankSampah
             this.btnHapusFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHapusFoto.Font = new System.Drawing.Font("Segoe UI", 7.5F);
             this.btnHapusFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnHapusFoto.Location = new System.Drawing.Point(0, 123);
+            this.btnHapusFoto.Location = new System.Drawing.Point(8, 136);
             this.btnHapusFoto.Name = "btnHapusFoto";
-            this.btnHapusFoto.Size = new System.Drawing.Size(88, 23);
+            this.btnHapusFoto.Size = new System.Drawing.Size(100, 26);
             this.btnHapusFoto.TabIndex = 4;
             this.btnHapusFoto.Text = "Hapus Foto";
             this.btnHapusFoto.UseVisualStyleBackColor = false;

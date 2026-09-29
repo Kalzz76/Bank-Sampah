@@ -24,7 +24,6 @@ namespace BankSampah
             UIHelper.StyleButtonGold(btnUbah);
             UIHelper.StyleButtonDanger(btnHapus);
             UIHelper.StyleButtonOutline(btnBatal);
-            UIHelper.StyleButtonOutline(btnPilihFoto);
 
             UIHelper.MakeRounded(panelFormCard, 10);
             UIHelper.MakeRounded(panelGridCard, 10);
