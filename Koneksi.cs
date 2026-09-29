@@ -8,10 +8,29 @@ namespace BankSampah
 {
     public class Koneksi
     {
-        private static string connString = @"Server=localhost;Database=db_banksampah;Integrated Security=True;TrustServerCertificate=True;";
-        private static string connStringExpress = @"Server=.\SQLEXPRESS;Database=db_banksampah;Integrated Security=True;TrustServerCertificate=True;";
+        private static string connStringExpress = @"Server=.\SQLEXPRESS;Database=db_banksampah;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;";
+        private static string connStringLocalhost = @"Server=localhost;Database=db_banksampah;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;";
         
         private static string _activeConnectionString = null;
+        private static bool _isOfflineMode = false;
+        private static DateTime _lastFailedCheck = DateTime.MinValue;
+        private static readonly TimeSpan RecheckInterval = TimeSpan.FromSeconds(15);
+        private static readonly object _syncLock = new object();
+
+        public static bool IsOfflineMode
+        {
+            get { return _isOfflineMode; }
+        }
+
+        public static void ResetConnectionState()
+        {
+            lock (_syncLock)
+            {
+                _isOfflineMode = false;
+                _lastFailedCheck = DateTime.MinValue;
+            }
+        }
+
         public static string ActiveConnectionString 
         { 
             get 
@@ -23,14 +42,14 @@ namespace BankSampah
                         var cs = ConfigurationManager.ConnectionStrings["DbBankSampah"];
                         if (cs != null && !string.IsNullOrWhiteSpace(cs.ConnectionString))
                         {
-                            _activeConnectionString = cs.ConnectionString;
+                            _activeConnectionString = EnsureConnectTimeout(cs.ConnectionString, 2);
                         }
                     }
                     catch { }
 
                     if (string.IsNullOrEmpty(_activeConnectionString))
                     {
-                        _activeConnectionString = connString;
+                        _activeConnectionString = connStringExpress;
                     }
                 }
                 return _activeConnectionString; 
@@ -38,40 +57,54 @@ namespace BankSampah
             set { _activeConnectionString = value; } 
         }
 
+        private static string EnsureConnectTimeout(string cs, int timeoutSeconds = 2)
+        {
+            if (string.IsNullOrEmpty(cs)) return cs;
+            if (!cs.ToLower().Contains("connect timeout") && !cs.ToLower().Contains("connection timeout"))
+            {
+                cs = cs.TrimEnd(';') + string.Format(";Connect Timeout={0};", timeoutSeconds);
+            }
+            return cs;
+        }
+
         public static SqlConnection GetConnection()
         {
-            SqlConnection conn = null;
-            try
+            lock (_syncLock)
             {
-                conn = new SqlConnection(ActiveConnectionString);
-                conn.Open();
-                return conn;
-            }
-            catch
-            {
-                if (ActiveConnectionString != connString)
-                {
-                    try
-                    {
-                        conn = new SqlConnection(connString);
-                        conn.Open();
-                        ActiveConnectionString = connString;
-                        return conn;
-                    }
-                    catch { }
-                }
-
-                try
-                {
-                    conn = new SqlConnection(connStringExpress);
-                    conn.Open();
-                    ActiveConnectionString = connStringExpress;
-                    return conn;
-                }
-                catch
+                // Jika sedang dalam mode offline dan belum melewati interval pengecekan ulang, langsung fallback ke in-memory tanpa lag
+                if (_isOfflineMode && (DateTime.Now - _lastFailedCheck) < RecheckInterval)
                 {
                     return null;
                 }
+
+                // Coba kandidat koneksi dengan timeout singkat (2 detik)
+                string[] candidates = {
+                    EnsureConnectTimeout(ActiveConnectionString, 2),
+                    EnsureConnectTimeout(connStringExpress, 2),
+                    EnsureConnectTimeout(connStringLocalhost, 2)
+                };
+
+                foreach (string candidate in candidates)
+                {
+                    if (string.IsNullOrWhiteSpace(candidate)) continue;
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(candidate);
+                        conn.Open();
+                        _isOfflineMode = false;
+                        _activeConnectionString = candidate;
+                        return conn;
+                    }
+                    catch
+                    {
+                        // Coba kandidat berikutnya
+                    }
+                }
+
+                // Jika semua kandidat gagal terhubung, aktifkan offline mode agar query-query berikutnya tidak freeze
+                _isOfflineMode = true;
+                _lastFailedCheck = DateTime.Now;
+                return null;
             }
         }
 

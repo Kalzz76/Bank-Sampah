@@ -229,6 +229,7 @@ namespace BankSampah
         {
             try
             {
+                Koneksi.ResetConnectionState();
                 using (var conn = Koneksi.GetConnection())
                 {
                     if (conn != null)
