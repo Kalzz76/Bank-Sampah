@@ -101,7 +101,7 @@ namespace BankSampah
             this.lblWaktu = new System.Windows.Forms.Label();
             this.txtEstimasiBerat = new System.Windows.Forms.TextBox();
             this.lblBerat = new System.Windows.Forms.Label();
-            this.txtJenisSampah = new System.Windows.Forms.TextBox();
+            this.cboJenisSampah = new System.Windows.Forms.ComboBox();
             this.lblJenis = new System.Windows.Forms.Label();
             this.lblFormBookingTitle = new System.Windows.Forms.Label();
             this.pnlMutasi = new System.Windows.Forms.Panel();
@@ -943,7 +943,7 @@ namespace BankSampah
             this.panelBookingForm.Controls.Add(this.lblWaktu);
             this.panelBookingForm.Controls.Add(this.txtEstimasiBerat);
             this.panelBookingForm.Controls.Add(this.lblBerat);
-            this.panelBookingForm.Controls.Add(this.txtJenisSampah);
+            this.panelBookingForm.Controls.Add(this.cboJenisSampah);
             this.panelBookingForm.Controls.Add(this.lblJenis);
             this.panelBookingForm.Controls.Add(this.lblFormBookingTitle);
             this.panelBookingForm.Location = new System.Drawing.Point(0, 0);
@@ -956,7 +956,7 @@ namespace BankSampah
             // 
             this.lblFormBookingTitle.AutoSize = true;
             this.lblFormBookingTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblFormBookingTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.lblFormBookingTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(38)))), ((int)(((byte)(31)))));
             this.lblFormBookingTitle.Location = new System.Drawing.Point(18, 14);
             this.lblFormBookingTitle.Name = "lblFormBookingTitle";
             this.lblFormBookingTitle.Size = new System.Drawing.Size(434, 20);
@@ -971,17 +971,19 @@ namespace BankSampah
             this.lblJenis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(90)))), ((int)(((byte)(82)))));
             this.lblJenis.Location = new System.Drawing.Point(18, 42);
             this.lblJenis.Name = "lblJenis";
-            this.lblJenis.Size = new System.Drawing.Size(175, 15);
+            this.lblJenis.Size = new System.Drawing.Size(210, 15);
             this.lblJenis.TabIndex = 1;
-            this.lblJenis.Text = "Jenis Sampah (Kardus, Plastik) *";
+            this.lblJenis.Text = "Pilih Jenis Sampah (Sesuai Katalog) *";
             // 
-            // txtJenisSampah
+            // cboJenisSampah
             // 
-            this.txtJenisSampah.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtJenisSampah.Location = new System.Drawing.Point(18, 62);
-            this.txtJenisSampah.Name = "txtJenisSampah";
-            this.txtJenisSampah.Size = new System.Drawing.Size(260, 23);
-            this.txtJenisSampah.TabIndex = 2;
+            this.cboJenisSampah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboJenisSampah.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cboJenisSampah.FormattingEnabled = true;
+            this.cboJenisSampah.Location = new System.Drawing.Point(18, 62);
+            this.cboJenisSampah.Name = "cboJenisSampah";
+            this.cboJenisSampah.Size = new System.Drawing.Size(260, 23);
+            this.cboJenisSampah.TabIndex = 2;
             // 
             // lblBerat
             // 
@@ -1367,7 +1369,7 @@ namespace BankSampah
         private System.Windows.Forms.Label lblWaktu;
         private System.Windows.Forms.TextBox txtEstimasiBerat;
         private System.Windows.Forms.Label lblBerat;
-        private System.Windows.Forms.TextBox txtJenisSampah;
+        private System.Windows.Forms.ComboBox cboJenisSampah;
         private System.Windows.Forms.Label lblJenis;
         private System.Windows.Forms.Label lblFormBookingTitle;
         private System.Windows.Forms.Panel pnlMutasi;

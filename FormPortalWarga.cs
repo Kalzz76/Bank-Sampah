@@ -42,6 +42,7 @@ namespace BankSampah
             UIHelper.MakeRounded(picMemberQrCode, 8);
             UIHelper.MakeRounded(btnKirimBooking, 8);
             UIHelper.MakeRounded(btnKeluar, 6);
+            UIHelper.MakeRounded(cboJenisSampah, 6);
             UIHelper.MakeRounded(lblMyRankNumber, 8);
 
             // Modern Grid Styles
@@ -75,6 +76,7 @@ namespace BankSampah
 
             // Populate Nasabah Dropdown
             PopulateNasabahDropdown();
+            PopulateJenisSampahDropdown();
 
             // Default Tab: Leaderboard & Gelar Hijau
             SwitchTab(pnlLeaderboard, btnTabLeaderboard);
@@ -106,6 +108,34 @@ namespace BankSampah
                     }
 
                     cboPilihNasabah.SelectedIndex = selectedIdx;
+                }
+            }
+            catch { }
+        }
+
+        private void PopulateJenisSampahDropdown()
+        {
+            try
+            {
+                cboJenisSampah.Items.Clear();
+                DataTable dtSampah = DataStore.GetSampah();
+                if (dtSampah != null && dtSampah.Rows.Count > 0)
+                {
+                    foreach (DataRow r in dtSampah.Rows)
+                    {
+                        string nama = r["nama_sampah"].ToString();
+                        decimal harga = 0;
+                        if (r.Table.Columns.Contains("harga_per_kg") && r["harga_per_kg"] != DBNull.Value)
+                        {
+                            harga = Convert.ToDecimal(r["harga_per_kg"]);
+                        }
+                        cboJenisSampah.Items.Add(string.Format("{0} (Rp {1:N0}/kg)", nama, harga));
+                    }
+                }
+                cboJenisSampah.Items.Add("Sampah Campuran / Aneka Jenis");
+                if (cboJenisSampah.Items.Count > 0)
+                {
+                    cboJenisSampah.SelectedIndex = 0;
                 }
             }
             catch { }
@@ -499,12 +529,12 @@ namespace BankSampah
 
         private void btnKirimBooking_Click(object sender, EventArgs e)
         {
-            string jenis = txtJenisSampah.Text.Trim();
+            string jenis = cboJenisSampah.SelectedItem != null ? cboJenisSampah.SelectedItem.ToString() : cboJenisSampah.Text.Trim();
             if (string.IsNullOrEmpty(jenis))
             {
                 SoundHelper.PlayAlertSound();
-                MessageBox.Show("Silakan sebutkan jenis sampah yang ingin dijemput!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtJenisSampah.Focus();
+                MessageBox.Show("Silakan pilih jenis sampah yang ingin dijemput!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboJenisSampah.Focus();
                 return;
             }
 
@@ -559,7 +589,7 @@ namespace BankSampah
                 MessageBoxIcon.Information
             );
 
-            txtJenisSampah.Clear();
+            if (cboJenisSampah.Items.Count > 0) cboJenisSampah.SelectedIndex = 0;
             txtEstimasiBerat.Clear();
             txtCatatanJemput.Clear();
 
