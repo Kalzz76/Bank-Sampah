@@ -55,6 +55,9 @@ namespace BankSampah
             UIHelper.FormatGridColumns(dgvRiwayat);
 
             decimal totalKg = 0;
+            decimal totalSetor = 0;
+            decimal totalTarik = 0;
+
             if (_dtRiwayat != null && _dtRiwayat.Rows.Count > 0)
             {
                 foreach (DataRow r in _dtRiwayat.Rows)
@@ -64,14 +67,30 @@ namespace BankSampah
                         decimal b;
                         if (decimal.TryParse(r["berat_kg"].ToString(), out b)) totalKg += b;
                     }
+
+                    string jenis = r.Table.Columns.Contains("jenis_transaksi") && r["jenis_transaksi"] != DBNull.Value ? r["jenis_transaksi"].ToString() : "";
+                    decimal val = 0;
+                    if (r.Table.Columns.Contains("total_harga") && r["total_harga"] != DBNull.Value && decimal.TryParse(r["total_harga"].ToString(), out val))
+                    {
+                        if (jenis.Equals("Setor", StringComparison.OrdinalIgnoreCase)) totalSetor += val;
+                        else if (jenis.Equals("Tarik", StringComparison.OrdinalIgnoreCase)) totalTarik += val;
+                    }
                 }
                 lblCountTrx.Text = string.Format("Menampilkan {0} mutasi transaksi", _dtRiwayat.Rows.Count);
+
+                decimal saldoMutasi = totalSetor - totalTarik;
+                if (_saldo != saldoMutasi)
+                {
+                    _saldo = saldoMutasi;
+                    DataStore.SyncSaldoNasabah(_idNasabah, _saldo);
+                }
             }
             else
             {
                 lblCountTrx.Text = "Belum ada transaksi tercatat untuk nasabah ini";
             }
 
+            lblMetricSaldo.Text = string.Format("Rp {0:N0}", _saldo);
             string badge = DataStore.GetBadgeNasabah(totalKg);
             lblTotalBerat.Text = string.Format("Total Sampah Disetor: {0:N2} kg   •   Level: {1}", totalKg, badge);
         }

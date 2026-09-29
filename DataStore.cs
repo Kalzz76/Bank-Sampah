@@ -251,6 +251,25 @@ namespace BankSampah
             if (rows.Length > 0) dtNasabah.Rows.Remove(rows[0]);
         }
 
+        public static void SyncSaldoNasabah(int idNasabah, decimal saldoBaru)
+        {
+            try
+            {
+                SqlParameter[] p = {
+                    new SqlParameter("@id", idNasabah),
+                    new SqlParameter("@s", saldoBaru)
+                };
+                Koneksi.ExecuteNonQuery("UPDATE tb_nasabah SET saldo=@s WHERE id_nasabah=@id", p);
+            }
+            catch { }
+
+            DataRow[] rows = dtNasabah.Select(string.Format("id_nasabah={0}", idNasabah));
+            if (rows.Length > 0)
+            {
+                rows[0]["saldo"] = saldoBaru;
+            }
+        }
+
         public static DataTable GetSampah()
         {
             try

@@ -287,12 +287,21 @@ namespace BankSampah
             decimal saldo = 0;
             if (dgvNasabah.CurrentRow != null && dgvNasabah.CurrentRow.Cells["saldo"].Value != null)
             {
-                string rawSaldo = dgvNasabah.CurrentRow.Cells["saldo"].Value.ToString().Replace("Rp", "").Trim();
-                decimal.TryParse(rawSaldo, out saldo);
+                object raw = dgvNasabah.CurrentRow.Cells["saldo"].Value;
+                if (raw is decimal)
+                {
+                    saldo = (decimal)raw;
+                }
+                else
+                {
+                    string rawSaldo = raw.ToString().Replace("Rp", "").Trim();
+                    decimal.TryParse(rawSaldo, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.CurrentCulture, out saldo);
+                }
             }
 
             FormRiwayatNasabah frm = new FormRiwayatNasabah(selectedId, kode, txtNama.Text, txtNoHp.Text, txtAlamat.Text, saldo, currentFotoFile);
             frm.ShowDialog(this);
+            LoadData();
         }
 
         private void dgvNasabah_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
